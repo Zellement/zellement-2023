@@ -4,32 +4,3 @@ $font-dir: "../fonts";
 body {
     @apply bg-gradient-to-b from-plum to-shiraz text-white min-h-screen font-sans;
 }
-
-h1, h2, h3, h4, h5, h6 {
-    @apply font-normal;
-}
-
-@font-face {
-    font-family: "DM Serif Text";
-    src: url("#{$font-dir}/DMSerifText-Regular.ttf") format("truetype");
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
-}
-
-
-@font-face {
-    font-family: "DM Serif Text";
-    src: url("#{$font-dir}/DMSerifText-Italic.ttf") format("truetype");
-    font-weight: 300;
-    font-style: italic;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "DM Sans";
-    src: url("#{$font-dir}/DMSans-Regular.ttf") format("truetype");
-    font-weight: 300;
-    font-style: italic;
-    font-display: swap;
-}
