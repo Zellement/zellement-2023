@@ -23,6 +23,7 @@ const QUERY = `
         teaserLine
         teaserStack
         slug
+        logoIsBlack
     }
   }
 `
