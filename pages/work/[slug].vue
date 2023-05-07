@@ -4,6 +4,11 @@
         <h1 class="sr-only">{{  data.work.title }}</h1>
         <h2 class="font-serif text-sm">{{ data.work.teaserLine}}</h2>
         {{ data.work.title }}
+        <ul>
+            <li v-for="item in data.work.techStack">
+                {{  item.title  }}
+            </li>
+        </ul>
     </div>
     <!-- {{ route.params.slug }} -->
 </template>
@@ -28,6 +33,9 @@ const QUERY = `
                     srcSet
                     webpSrcSet
                 }
+            }
+            techStack {
+            title
             }
             teaserLine
             teaserStack
