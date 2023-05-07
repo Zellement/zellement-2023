@@ -44,7 +44,7 @@ export default defineNuxtConfig({
                 },
                 { hid: 'og-type', property: 'og:type', content: 'website' }
             ],
-            link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.svg' }]
+            link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }]
         }
     },
     vite: {
