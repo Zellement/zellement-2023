@@ -11,7 +11,7 @@
                 <span class="font-serif text-sm leading-tight ">{{ props.data.teaserLine }}</span>
                 <span class="text-gray-400 group-hover:white-gray-100">{{ props.data.teaserStack }} </span>
             </div>
-            <span class="absolute top-0 right-0 opacity-0 m-1 transition-all duration-300 group-hover:opacity-100 py-1 px-1.5 text-gray-500 bg-gray-100 text-[0.65rem] rounded-lg">{{ getYear }}</span>
+            <span class="absolute top-0 right-0 opacity-0 m-1 transition-all duration-300 group-hover:opacity-100 py-1 px-1.5 text-gray-500 bg-gray-100 text-[0.65rem] rounded-tr-lg rounded-bl-lg">{{ getYear }}</span>
             <!-- <span class="absolute top-0 right-0 p-2 text-3xs opacity-30">{{ convertDate }}</span> -->
         </nuxt-link>
     </li>

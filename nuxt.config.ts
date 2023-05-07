@@ -16,7 +16,7 @@ export default defineNuxtConfig({
     },
     target: 'static',
     devServerHandlers: [], // Fix for issue - https://github.com/nuxt-modules/tailwindcss/issues/480
-    modules: ['@nuxtjs/color-mode', '@nuxtjs/tailwindcss', '@nuxt/image-edge'],
+    modules: ['@nuxtjs/color-mode', 'nuxt-icon', '@nuxtjs/tailwindcss', '@nuxt/image-edge'],
     colorMode: {
         classSuffix: '',
         preference: 'dark'
