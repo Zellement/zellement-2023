@@ -23,6 +23,12 @@ module.exports = {
             serif: ['DM Serif Text', ...defaultTheme.fontFamily.sans]
         },
         fontSize: {
+            '3xs': [
+                'clamp(0.60rem, calc(0.80rem + 0.00vw), 0.80rem)',
+                {
+                    lineHeight: 'calc(100% + 10px)'
+                }
+            ],
             '2xs': [
                 'clamp(0.80rem, calc(0.80rem + 0.00vw), 0.90rem)',
                 {

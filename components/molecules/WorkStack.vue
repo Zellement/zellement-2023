@@ -1,6 +1,6 @@
 <template>
-    <div class="relative flex w-2/3 max-h-screen p-2 ml-auto overflow-y-auto md:p-1 lg:w-1/2" v-if="data">
-        <ul class="relative flex flex-col w-full gap-4 pr-2 my-auto overflow-y-auto snap-y snap-end work-stack lg:m-4">
+    <div class="relative flex w-2/3 max-h-screen p-2 ml-auto overflow-y-auto md:w-3/5 md:p-4 lg:w-1/2" v-if="data">
+        <ul class="relative flex flex-col w-full gap-4 my-auto overflow-y-auto lg:pr-2 snap-y snap-end work-stack lg:m-4">
             <atoms-work-stack-item
                 v-for="item in data.allWorks"
                 :key="item.id"
@@ -19,11 +19,20 @@ const QUERY = `
         logo {
             id
             url
+            responsiveImage {
+                alt
+                base64
+                bgColor
+                title
+                srcSet
+                webpSrcSet
+            }
         }
         teaserLine
         teaserStack
         slug
         logoIsBlack
+        date
     }
   }
 `

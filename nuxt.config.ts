@@ -9,6 +9,11 @@ export default defineNuxtConfig({
             datoCmsToken: process.env.DATO_CMS_TOKEN
         }
     },
+    image: {
+        datocms: {
+            baseURL: 'https://images.ctfassets.net/'
+        }
+    },
     target: 'static',
     devServerHandlers: [], // Fix for issue - https://github.com/nuxt-modules/tailwindcss/issues/480
     modules: ['@nuxtjs/color-mode', '@nuxtjs/tailwindcss', '@nuxt/image-edge'],
