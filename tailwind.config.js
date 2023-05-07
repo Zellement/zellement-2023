@@ -70,6 +70,12 @@ module.exports = {
                 {
                     lineHeight: 'calc(100% + 10px)'
                 }
+            ],
+            '4xl': [
+                'clamp(3.49rem, calc(2.17rem + 4.11vw), 8.31rem)',
+                {
+                    lineHeight: 'calc(100% + 10px)'
+                }
             ]
         },
         screens: {

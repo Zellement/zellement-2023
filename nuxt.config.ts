@@ -4,6 +4,11 @@ import eslintVitePlugin from 'vite-plugin-eslint'
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
     ssr: false,
+    runtimeConfig: {
+        public: {
+            datoCmsToken: process.env.DATO_CMS_TOKEN
+        }
+    },
     target: 'static',
     devServerHandlers: [], // Fix for issue - https://github.com/nuxt-modules/tailwindcss/issues/480
     modules: ['@nuxtjs/color-mode', '@nuxtjs/tailwindcss', '@nuxt/image-edge'],
