@@ -1,6 +1,3 @@
-
-$font-dir: "../fonts";
-
 body {
-    @apply bg-gradient-to-b from-plum to-shiraz text-white min-h-screen font-sans;
+    @apply bg-gradient-to-br from-plum via-shiraz-600 to-shiraz text-white min-h-screen font-sans;
 }
