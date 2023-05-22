@@ -2,10 +2,8 @@
     <atoms-site-logo />
     <molecules-site-nav />
     <div class="layout">
-        <div class="wrapper">
-            <main>
-                <slot />
-            </main>
-        </div>
+        <main>
+            <slot />
+        </main>
     </div>
 </template>

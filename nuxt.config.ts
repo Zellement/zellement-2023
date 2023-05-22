@@ -50,7 +50,8 @@ export default defineNuxtConfig({
                 { hid: 'og-type', property: 'og:type', content: 'website' }
             ],
             link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }]
-        }
+        },
+        pageTransition: { name: 'page', mode: 'out-in' }
     },
     vite: {
         plugins: [
