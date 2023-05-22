@@ -2,7 +2,9 @@
     <div class="relative z-10 w-full h-screen ml-auto overflow-y-scroll text-black bg-white slug-content">
 
         <div class="w-1/2 p-4 ml-auto overflow-hidden xl:px-16">
-            <h2 class="opacity-5 w-2/5 text-gray-500 pointer-events-none font-serif absolute text-[9vw] lg:text-[7vw] xl:text-[6vw] 2xl:text-[5vw] leading-none top-0 mt-2 -mr-1 right-0 text-right">{{ data.work.teaserLine}}</h2>
+            <h2 class="opacity-5 w-2/5 text-gray-500 pointer-events-none font-serif absolute text-[9vw] lg:text-[7vw] xl:text-[6vw] 2xl:text-[5vw] leading-none top-0 mt-2 -mr-1 right-0 text-right">
+                {{ data.work.teaserLine}}
+            </h2>
             <div class="relative z-10 flex flex-col items-start self-start justify-start gap-8 ">
                 <nuxt-link class="fixed left-1/2 top-0 ml-4 mt-4 flex flex-row gap-2 p-1 lg:py-1.5 lg:px-2 text-gray-500 bg-white transition-colors duration-300 border border-current rounded hover:text-shiraz-500 " to="/"  title="Go back">
                     <Icon name="uil:arrow-left" class="w-3 h-3 m-auto lg:w-6 lg:h-6" />
@@ -37,16 +39,18 @@
                     </li>
                 </ul>
             </ul>
+            <div class="flex flex-row items-end justify-end gap-8 mt-8">
 
-            <div v-if="isNotFreelance" class="mt-8 font-serif leading-none text-right">
-                <nuxt-link class="transition-colors duration-300 hover:text-plum" :to="data.work.employer.website" target="_blank">
-                    <span class="block font-sans text-gray-400 text-2xs">Delivered with</span>
-                    {{ data.work.employer.title }}
-                </nuxt-link>
-            </div>
+                <div v-if="isNotFreelance" class="font-serif leading-none text-right">
+                    <nuxt-link class="transition-colors duration-300 hover:text-plum" :to="data.work.employer.website" target="_blank">
+                        <span class="block font-sans text-gray-400 text-2xs">Delivered with</span>
+                        {{ data.work.employer.title }} <span class="text-gray-400"><em>in {{ getYear }}</em></span>
+                    </nuxt-link>
+                </div>
 
-            <div v-else class="mt-8 font-serif italic leading-none text-right">
-                {{ data.work.employer.title }}, Design &amp; Development
+                <div v-else class="font-serif italic leading-none text-right">
+                    {{ data.work.employer.title }}, Design &amp; Development <span class="text-gray-400"><em>in {{ getYear }}</em></span>
+                </div>
             </div>
         </div>
 
@@ -133,5 +137,11 @@ const isNotFreelance = computed(() => {
 if (!data.value.work?.slug) {
     navigateTo('/')
 }
+
+const getYear = computed(() => {
+    const date = new Date(data?.value.work?.date)
+    const year = date.getFullYear()
+    return year
+})
 
 </script>
