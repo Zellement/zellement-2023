@@ -149,7 +149,8 @@ module.exports = {
                 '1/2': '1 / 2',
                 landscape: '383 / 235',
                 '2/3': '2 / 3',
-                short: '500 / 200'
+                short: '500 / 200',
+                xshort: '700 / 200'
             },
             outlineWidth: {
                 3: '3px'

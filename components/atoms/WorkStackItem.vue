@@ -7,7 +7,7 @@
             <img
                 :alt="`Logo for ${props.data.title}`" class="flex-grow-0 block max-h-[2rem] max-w-32" :src="props.data.logo.url"
                 :class="invertLogoOnHover ? 'group-hover:invert group-hover:brightness-200 transition-all duration-300' : null" />
-            <div class="flex flex-col">
+            <div class="flex flex-col xl:items-end">
                 <span class="font-serif text-xs leading-tight lg:text-sm ">{{ props.data.teaserLine }}</span>
                 <span class="text-gray-400 text-2xs lg:text-xs group-hover:white-gray-100">{{ props.data.teaserStack }} </span>
             </div>
