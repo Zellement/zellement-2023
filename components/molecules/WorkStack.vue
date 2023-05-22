@@ -1,5 +1,5 @@
 <template>
-    <div class="relative p-2 !pr-4 flex w-2/3 max-h-screen  ml-auto overflow-y-auto md:w-3/5 md:p-4 !pb-0 2xl:p-16 lg:w-1/2 3xl:w-1/3" v-if="data">
+    <div class="relative p-2 !pr-4 flex w-2/3   ml-auto overflow-y-auto md:w-3/5 md:p-4 !pb-0 2xl:p-16 lg:w-1/2 3xl:w-1/3" v-if="data">
         <ul class="relative flex flex-col w-full gap-4 pb-4 my-auto overflow-y-auto lg:pr-8 snap-y snap-end work-stack 2xl:pb-16 2xl:pr-16">
             <atoms-work-stack-item
                 v-for="item in data.allWorks"

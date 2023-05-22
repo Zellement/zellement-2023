@@ -4,7 +4,7 @@
         <nuxt-link class="fixed bottom-0 right-0 flex w-5 h-5 mb-8 mr-8 text-white transition-colors duration-300 rounded aspect-square bg-plum hover:bg-shiraz" :to="data.work.website" target="_blank" title="Visit website">
             <Icon name="uil:external-link-alt" class="w-3 h-3 m-auto" />
         </nuxt-link>
-        <h2 class="opacity-5 text-gray-500 pointer-events-none translate-x-4 font-serif text-sm absolute text-[11vw] top-0 left-0">{{ data.work.teaserLine}}</h2>
+        <h2 class="opacity-5 text-gray-500 pointer-events-none translate-x-4 font-serif  absolute text-[11vw] leading-none top-0 left-0">{{ data.work.teaserLine}}</h2>
         <div class="relative z-10 grid items-start self-start justify-start grid-cols-2 gap-8">
             <nuxt-link class="absolute top-0 left-0 flex w-5 h-5 text-gray-700 transition-colors duration-300 bg-gray-300 rounded aspect-square hover:bg-shiraz hover:text-white" to="/"  title="Visit website">
                 <Icon name="uil:arrow-left" class="w-3 h-3 m-auto" />
