@@ -1,6 +1,6 @@
 <template>
     <div class="relative z-10 w-full h-screen ml-auto overflow-y-scroll text-black bg-white slug-content">
-
+        {{ heroIsLoaded }}
         <div class="w-1/2 p-4 ml-auto overflow-hidden xl:px-16">
             <h2 class="opacity-5 w-2/5 text-gray-500 pointer-events-none font-serif absolute text-[9vw] lg:text-[7vw] xl:text-[6vw] 2xl:text-[5vw] leading-none top-0 mt-2 -mr-1 right-0 text-right">
                 {{ data.work.teaserLine}}
@@ -18,17 +18,17 @@
         </div>
 
         <div class="w-full ml-auto lg:max-w-2/3 lg:mt-4 aspect-square md:aspect-video 2xl:max-w-3/4">
-            <img :alt="`Main image for ${data.title}`" class="object-cover w-full h-full" :src="data?.work.heroImage.url"/>
+            <img v-show="heroIsLoaded" :alt="`Main image for ${data.title}`" class="object-cover w-full h-full" :src="data?.work.heroImage.url"/>
         </div>
 
-        <div class="w-1/2 p-4 ml-auto overflow-hidden ">
+        <div class="w-1/2 p-4 ml-auto overflow-hidden 3xl:flex 3xl:flex-row 3xl:gap-16 3xl:items-center 3xl:justify-between ">
 
-            <ul class="flex flex-col justify-end w-full gap-2 text-right" v-if="data.work.techStack">
+            <ul class="flex flex-col justify-end w-full gap-2 text-right 2xl:w-auto " v-if="data.work.techStack">
 
                 <ul class="flex flex-col items-end justify-end gap-2 lg:gap-6 lg:flex-row lg:flex-wrap" v-if="data.work.techStack">
 
                     <li
-                        class="flex flex-row items-center gap-2"
+                        class="flex flex-row items-center gap-2 3xl:flex-wrap"
                         v-for="item in data.work.techStack"
                         :key="item.id"
                     >
@@ -39,20 +39,24 @@
                     </li>
                 </ul>
             </ul>
-            <div class="flex flex-row items-end justify-end gap-8 mt-8">
+            <div class="flex flex-row items-end justify-end gap-8 mt-8 3xl:m-0 3xl:flex-shrink-0">
 
-                <div v-if="isNotFreelance" class="font-serif leading-none text-right">
-                    <nuxt-link class="transition-colors duration-300 hover:text-plum" :to="data.work.employer.website" target="_blank">
-                        <span class="block font-sans text-gray-400 text-2xs">Delivered with</span>
+                <div class="font-serif leading-none text-right">
+
+                    <template v-if="isFreelance">
                         {{ data.work.employer.title }} <span class="text-gray-400"><em>in {{ getYear }}</em></span>
-                    </nuxt-link>
-                </div>
-
-                <div v-else class="font-serif italic leading-none text-right">
-                    {{ data.work.employer.title }}, Design &amp; Development <span class="text-gray-400"><em>in {{ getYear }}</em></span>
+                    </template>
+                    <template v-else>
+                        <nuxt-link class="leading-none transition-colors duration-300 hover:text-plum 3xl:flex 3xl:gap-1 3xl:items-end" :to="data.work.employer.website" target="_blank">
+                            <span class="block font-sans leading-none text-gray-400 text-2xs 3xl:mb-px">Delivered with</span>
+                            {{ data.work.employer.title }} <span class="text-gray-400"><em>in {{ getYear }}</em></span>
+                        </nuxt-link>
+                    </template>
                 </div>
             </div>
         </div>
+
+        <div class="hidden w-1/2 h-px ml-auto bg-gradient-to-r from-shiraz to-plum 3xl:block" />
 
         <div class="w-3/5 p-4 my-6 ml-auto text-xs bg-white aspect-video lg:max-w-3/4 lg:aspect-auto lg:p-8 2xl:p-12" v-if="data.work.overview">
             <h2 class="mb-8 font-serif text-base text-plum-500 lg:text-xl">Overview</h2>
@@ -130,8 +134,8 @@ const QUERY = `
 const route = useRoute()
 const { data } = await useGraphqlQuery({ query: QUERY, variables: { slug: route.params.slug } })
 
-const isNotFreelance = computed(() => {
-    return data?.value.work?.employer?.title !== 'Freelance'
+const isFreelance = computed(() => {
+    return data?.value.work?.employer?.title.includes('Freelance')
 })
 
 if (!data.value.work?.slug) {
@@ -143,5 +147,9 @@ const getYear = computed(() => {
     const year = date.getFullYear()
     return year
 })
+
+const heroIsLoaded = () => {
+    return data.value.work.heroImage.url.isLoaded
+}
 
 </script>
