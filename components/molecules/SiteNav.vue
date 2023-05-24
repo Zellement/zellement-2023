@@ -5,3 +5,18 @@
         <li class="site-nav__list"><nuxt-link class="site-nav__link" to="/">Contact</nuxt-link></li>
     </nav>
 </template>
+
+<script setup>
+const route = useRoute()
+
+console.log(route)
+
+// const isWorkPage = computed(() => {
+//     return window.location.pathname.includes('work')
+//     // return console.log(window.location.pathname)
+// })
+
+// console.log(isWorkPage.value)
+// console.log(window.location.pathname)
+
+</script>

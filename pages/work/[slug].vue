@@ -1,8 +1,7 @@
 <template>
-    <div class="relative z-10 w-full h-screen ml-auto overflow-y-scroll text-black bg-white slug-content">
-        {{ heroIsLoaded }}
+    <div class="relative z-10 w-full h-screen pb-12 ml-auto overflow-y-scroll text-black bg-white slug-content">
         <div class="w-1/2 p-4 ml-auto overflow-hidden xl:px-16">
-            <h2 class="opacity-5 w-2/5 text-gray-500 pointer-events-none font-serif absolute text-[9vw] lg:text-[7vw] xl:text-[6vw] 2xl:text-[5vw] leading-none top-0 mt-2 -mr-1 right-0 text-right">
+            <h2 class="opacity-5 w-2/5 text-gray-500 pointer-events-none font-serif absolute text-[9vw] lg:text-[7vw] xl:text-[6vw] 2xl:text-[5vw] leading-none top-0 mt-2.5 right-0 text-right">
                 {{ data.work.teaserLine}}
             </h2>
             <div class="relative z-10 flex flex-col items-start self-start justify-start gap-8 ">
@@ -10,22 +9,22 @@
                     <Icon name="uil:arrow-left" class="w-3 h-3 m-auto lg:w-6 lg:h-6" />
                     <span class="hidden lg:block">Go back</span>
                 </nuxt-link>
-                <div class="flex w-full aspect-square sm:aspect-video xl:aspect-short 2xl:aspect-xshort">
-                    <img :alt="`Logo for ${data.title}`" class="flex w-full mt-auto ml-auto xl:max-h-72 xl:w-auto" :src="data?.work.logo.url"/>
+                <div class="flex w-full aspect-square sm:aspect-video 2xl:aspect-short 3xl:aspect-xshort">
+                    <img loading="eager" :alt="`${data.work.title} logo`" class="flex w-full mt-auto ml-auto xl:max-h-72 xl:w-auto" :src="data?.work.logo.url"/>
                 </div>
                 <h1 class="sr-only">{{  data.work.title }}</h1>
             </div>
         </div>
 
-        <div class="w-full ml-auto lg:max-w-2/3 lg:mt-4 aspect-square md:aspect-video 2xl:max-w-3/4">
-            <img v-show="heroIsLoaded" :alt="`Main image for ${data.title}`" class="object-cover w-full h-full" :src="data?.work.heroImage.url"/>
+        <div class="relative w-full ml-auto lg:max-w-2/3 lg:mt-4 aspect-square md:aspect-video 2xl:max-w-3/4">
+            <datocms-image class="w-full h-full" picture-class="object-cover w-full h-full" :data="data?.work?.heroImage?.responsiveImage" />
         </div>
 
         <div class="w-1/2 p-4 ml-auto overflow-hidden 3xl:flex 3xl:flex-row 3xl:gap-16 3xl:items-center 3xl:justify-between ">
 
             <ul class="flex flex-col justify-end w-full gap-2 text-right 2xl:w-auto " v-if="data.work.techStack">
 
-                <ul class="flex flex-col items-end justify-end gap-2 lg:gap-6 lg:flex-row lg:flex-wrap" v-if="data.work.techStack">
+                <ul class="flex flex-col items-end justify-end space-y-2 lg:space-y-1 lg:space-x-4 lg:flex-row lg:flex-wrap" v-if="data.work.techStack">
 
                     <li
                         class="flex flex-row items-center gap-2 3xl:flex-wrap"
@@ -59,8 +58,8 @@
         <div class="hidden w-1/2 h-px ml-auto bg-gradient-to-r from-shiraz to-plum 3xl:block" />
 
         <div class="w-3/5 p-4 my-6 ml-auto text-xs bg-white aspect-video lg:max-w-3/4 lg:aspect-auto lg:p-8 2xl:p-12" v-if="data.work.overview">
-            <h2 class="mb-8 font-serif text-base text-plum-500 lg:text-xl">Overview</h2>
-            <div class="text-gray-500 lg:text-base content" v-html="data.work.overview" />
+            <h2 class="mb-8 font-serif text-base text-plum-500 lg:text-lg xl:text-xl">Overview</h2>
+            <div class="text-gray-500 lg:text-sm content" v-html="data.work.overview" />
         </div>
 
         <div class="w-3/5 p-4 my-6 ml-auto text-xs text-white bg-plum-600 xl:max-w-1/4 xl:p-8 2xl:p-12 xl:mr-1/4" v-if="data.work.additional">
@@ -78,6 +77,8 @@
 
 <script setup>
 
+import { Image as datocmsImage } from 'vue-datocms'
+
 import { computed } from 'vue'
 
 const QUERY = `
@@ -94,13 +95,12 @@ const QUERY = `
             logo {
                 id
                 url
+                format
                 responsiveImage {
                     alt
                     base64
                     bgColor
                     title
-                    srcSet
-                    webpSrcSet
                 }
             }
             techStack {
@@ -118,11 +118,12 @@ const QUERY = `
             date
             heroImage {
                 url
+                alt
                 responsiveImage {
-                    alt
-                    base64
-                    bgColor
-                    title
+                    src
+                    width
+                    height
+                    srcSet
                 }
             }
             overview
@@ -148,8 +149,8 @@ const getYear = computed(() => {
     return year
 })
 
-const heroIsLoaded = () => {
-    return data.value.work.heroImage.url.isLoaded
-}
+// const heroIsLoaded = () => {
+//     return data.value.work.heroImage.url.isLoaded
+// }
 
 </script>
