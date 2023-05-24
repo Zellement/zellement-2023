@@ -11,4 +11,12 @@
             @apply w-1/2;
         }
     }
+    &__link-active {
+        &:after {
+            @apply w-1/2;
+        }
+    }
+    .router-link-exact-active {
+        @apply text-shiraz-50;
+    }
 }
