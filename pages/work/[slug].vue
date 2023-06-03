@@ -10,7 +10,7 @@
                     <span class="hidden lg:block">Go back</span>
                 </nuxt-link>
                 <div class="flex w-full aspect-square sm:aspect-video 2xl:aspect-short 3xl:aspect-xshort">
-                    <img loading="eager" :alt="`${data.work.title} logo`" class="flex w-full mt-auto ml-auto xl:max-h-72 xl:w-auto" :src="data?.work.logo.url"/>
+                    <img loading="eager" :alt="`${data.work.title} logo`" class="flex w-full mt-auto ml-auto xl:max-h-72 xl:w-auto" :src="data?.work?.logo?.url"/>
                 </div>
                 <h1 class="sr-only">{{  data.work.title }}</h1>
             </div>
@@ -33,7 +33,7 @@
                     >
                         <span class="font-serif ">{{  item.title  }}</span>
                         <span class="w-4 h-4">
-                            <img :src="item.logo.url" class="w-full h-auto" />
+                            <img :src="item?.logo?.url" class="w-full h-auto" />
                         </span>
                     </li>
                 </ul>
