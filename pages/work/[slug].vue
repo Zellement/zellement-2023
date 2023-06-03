@@ -1,7 +1,7 @@
 <template>
-    <div class="relative z-10 w-full h-screen pb-12 ml-auto overflow-y-scroll text-black bg-white slug-content">
+    <div class="relative z-10 w-full h-screen pb-12 ml-auto overflow-y-scroll text-black bg-white dark:text-slate-300 slug-content">
         <div class="w-1/2 p-4 ml-auto overflow-hidden xl:px-16">
-            <h2 class="opacity-5 w-2/5 text-gray-500 pointer-events-none font-serif absolute text-[9vw] lg:text-[7vw] xl:text-[6vw] 2xl:text-[5vw] leading-none top-0 mt-2.5 right-0 text-right">
+            <h2 class="w-2/5 text-gray-500 pointer-events-none font-serif absolute text-[9vw] dark:text-slate-50/30 lg:text-[7vw] xl:text-[6vw] 2xl:text-[5vw] leading-none top-0 mt-2.5 right-0 text-right">
                 {{ data.work.teaserLine}}
             </h2>
             <div class="relative z-10 flex flex-col items-start self-start justify-start gap-8 ">
@@ -57,9 +57,9 @@
 
         <div class="hidden w-1/2 h-px ml-auto bg-gradient-to-r from-shiraz to-plum 3xl:block" />
 
-        <div class="w-3/5 p-4 my-6 ml-auto text-xs bg-white aspect-video lg:max-w-3/4 lg:aspect-auto lg:p-8 2xl:p-12" v-if="data.work.overview">
-            <h2 class="mb-8 font-serif text-base text-plum-500 lg:text-lg xl:text-xl">Overview</h2>
-            <div class="text-gray-500 lg:text-sm content" v-html="data.work.overview" />
+        <div class="w-3/5 p-4 my-6 ml-auto text-xs bg-white dark:bg-slate-700 dark:text-slate-300 aspect-video lg:max-w-3/4 lg:aspect-auto lg:p-8 2xl:p-12" v-if="data.work.overview">
+            <h2 class="mb-8 font-serif text-base dark:text-shiraz-50 text-plum-500 lg:text-lg xl:text-xl">Overview</h2>
+            <div class=" lg:text-sm content" v-html="data.work.overview" />
         </div>
 
         <div class="w-3/5 p-4 my-6 ml-auto text-xs text-white bg-plum-600 xl:max-w-1/4 xl:p-8 2xl:p-12 xl:mr-1/4" v-if="data.work.additional">

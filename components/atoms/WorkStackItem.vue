@@ -1,12 +1,12 @@
 <template>
     <li
-        class="p-1.5 shadow-lg lg:p-2 bg-white/50 rounded-2xl"
+        class="p-1.5 shadow-lg lg:p-2 bg-white/50 dark:bg-plum-700/50 rounded-2xl"
     >
-        <nuxt-link :to="`work/${props.data.slug}`" class="relative grid items-center gap-4 p-4 text-gray-600 transition-all duration-300 bg-white shadow-lg lg:p-8 lg:gap-12 lg:grid-cols-2 rounded-xl hover:bg-plum-500 hover:text-white group">
+        <nuxt-link :to="`work/${props.data.slug}`" class="relative grid items-center gap-4 p-4 text-gray-600 transition-all duration-300 bg-white shadow-lg dark:bg-plum-600 lg:p-8 lg:gap-12 lg:grid-cols-2 rounded-xl hover:bg-plum-500 hover:text-white group">
             <span class="sr-only">{{ props.data.title }}</span>
             <img
                 :alt="`Logo for ${props.data.title}`" class="flex-grow-0 block max-h-[2rem] max-w-32" :src="props.data?.logo?.url"
-                :class="invertLogoOnHover ? 'group-hover:invert group-hover:brightness-200 transition-all duration-300' : null" />
+                :class="invertLogoOnHover ? 'dark:invert dark:brightness-200 group-hover:invert group-hover:brightness-200 transition-all duration-300' : null" />
             <div class="flex flex-col 3xl:flex-row 3xl:items-center 3xl:justify-between 3xl:gap-8">
                 <span class="font-serif text-xs leading-tight lg:text-sm ">{{ props.data.teaserLine }}</span>
                 <span class="text-gray-400 text-2xs lg:text-xs group-hover:white-gray-100">{{ props.data.teaserStack }} </span>
