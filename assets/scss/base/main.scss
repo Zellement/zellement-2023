@@ -3,7 +3,7 @@ html.dark body {
 }
 
 html.light body {
-    @apply bg-gradient-to-br from-plum via-shiraz-600 to-shiraz text-black min-h-screen font-sans bg-fixed;
+    @apply bg-gradient-to-br from-white via-shiraz-50 to-plum-600 text-black min-h-screen font-sans bg-fixed;
 }
 
 html {
