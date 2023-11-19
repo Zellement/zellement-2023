@@ -14,8 +14,8 @@
                 :class="invertLogoOnHover ? 'dark:invert dark:brightness-200 group-hover:invert group-hover:brightness-200 transition-all duration-300' : null"
             >
             <div class="flex flex-col 3xl:flex-row 3xl:items-center 3xl:justify-between 3xl:gap-8">
-                <span class="font-serif text-xs leading-tight lg:text-sm ">{{ props.data.teaserLine }}</span>
-                <span class="text-gray-400 text-2xs lg:text-xs group-hover:white-gray-100">{{ props.data.teaserStack }} </span>
+                <span class="font-serif text-xs leading-tight dark:text-gray-400 lg:text-sm ">{{ props.data.teaserLine }}</span>
+                <span class="dark:text-gray-300 text-2xs lg:text-xs group-hover:white-gray-100">{{ props.data.teaserStack }} </span>
             </div>
             <span class="absolute top-0 right-0 opacity-0 m-1 transition-all duration-300 group-hover:opacity-100 py-1 px-1.5 text-gray-500 bg-gray-100 text-[0.65rem] rounded-tr-lg rounded-bl-lg">{{ getYear }}</span>
             <!-- <span class="absolute top-0 right-0 p-2 text-3xs opacity-30">{{ convertDate }}</span> -->

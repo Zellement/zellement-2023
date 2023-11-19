@@ -6,7 +6,7 @@
             </h2>
             <div class="relative z-10 flex flex-col items-start self-start justify-start gap-8 ">
                 <nuxt-link
-                    class="fixed top-0 mt-4 ml-4 transition-colors duration-300 btn left-1/2"
+                    class="fixed top-0 mt-4 transition-colors duration-300 -translate-x-1/2 lg:ml-4 btn left-1/2 lg:translate-x-0"
                     to="/"
                     title="Go back"
                 >

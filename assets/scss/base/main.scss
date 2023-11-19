@@ -1,5 +1,5 @@
 html.dark body {
-    @apply bg-gradient-to-r from-shiraz-700 via-shiraz-600 to-plum-700 text-white min-h-screen font-sans bg-fixed;
+    @apply bg-gradient-to-r from-shiraz-700 via-shiraz-600 to-shiraz-700 text-white h-screen font-sans bg-fixed;
 }
 
 html.light body {
@@ -8,6 +8,10 @@ html.light body {
 
 html {
     @apply bg-plum-500;
+}
+
+html.dark {
+    @apply bg-shiraz-700 overflow-hidden;
 }
 
 .dark .slug-content {
