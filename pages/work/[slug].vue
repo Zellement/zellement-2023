@@ -35,7 +35,7 @@
             </div>
         </div>
 
-        <div class="relative w-full ml-auto lg:max-w-2/3 lg:mt-4 aspect-square md:aspect-video 2xl:max-w-3/4">
+        <!-- <div class="relative w-full ml-auto lg:max-w-2/3 lg:mt-4 aspect-square md:aspect-video 2xl:max-w-3/4">
             <div
                 v-if="!state.imgLoaded"
                 class="absolute inset-0 flex transition-opacity duration-500 bg-gradient-to-l dark:from-shiraz-700 from-gray-100 to-gray-200 dark:to-shiraz-600"
@@ -53,7 +53,7 @@
                 :data="data?.work?.heroImage?.responsiveImage"
                 :on-load="imageLoaded()"
             />
-        </div>
+        </div> -->
 
         <div class="w-1/2 p-4 ml-auto overflow-hidden 3xl:flex 3xl:flex-row 3xl:gap-16 3xl:items-center 3xl:justify-between ">
             <ul
@@ -99,9 +99,9 @@
             </div>
         </div>
 
-        <div class="hidden w-1/2 h-px ml-auto bg-gradient-to-r from-shiraz to-plum 3xl:block" />
+        <!-- <div class="hidden w-1/2 h-px ml-auto bg-gradient-to-r from-shiraz to-plum 3xl:block" /> -->
 
-        <div
+        <!-- <div
             v-if="data?.work.overview"
             class="w-3/5 p-4 mt-10 mb-6 ml-auto text-xs bg-white bg-gradient-to-r from-shiraz-10 to-white dark:from-plum-600 dark:to-plum-500 dark:text-slate-300 aspect-video lg:max-w-3/4 lg:aspect-auto lg:p-8 2xl:p-12"
         >
@@ -112,9 +112,9 @@
                 class=" lg:text-sm content"
                 v-html="data?.work.overview"
             />
-        </div>
+        </div> -->
 
-        <div
+        <!-- <div
             v-if="data?.work.additional"
             class="w-3/5 p-4 my-6 ml-auto text-xs text-black bg-gradient-to-r from-plum-50 to-white dark:text-white dark:from-shiraz-700 dark:to-shiraz-800 xl:max-w-1/4 xl:p-8 2xl:p-12 xl:mr-1/4"
         >
@@ -125,7 +125,7 @@
                 class="dark:text-gray-400 text-2xs lg:text-xs content"
                 v-html="data?.work.additional"
             />
-        </div>
+        </div> -->
 
         <nuxt-link
             class="fixed bottom-0 right-0 flex flex-row border border-white border-opacity-10 items-center gap-2 px-1 py-0.5 mb-4 mr-4 text-white  duration-300 rounded  lg:px-2 lg:py-1.5 bg-gradient-to-br from-plum-500 to-shiraz hover:border-opacity-50 hover:shadow-xl transition-all"
@@ -144,7 +144,7 @@
 
 <script setup>
 
-import { Image as datocmsImage } from 'vue-datocms'
+// import { Image as datocmsImage } from 'vue-datocms'
 
 const QUERY = `
     query WorkQuery ($slug: String!) {
@@ -198,25 +198,25 @@ const QUERY = `
     }
 `
 
-const state = reactive({
-    imgLoaded: false
-})
-
-const imageLoaded = () => {
-    state.imgLoaded = true
-}
-
-const imgClasses = computed(() => {
-    return state.imgLoaded ? 'opacity-100' : 'opacity-0'
-})
-
-const loadingClasses = computed(() => {
-    return state.imgLoaded ? 'opacity-0 ' : 'opacity-100'
-})
-
 const route = useRoute()
 
 const { data } = await useGraphqlQuery({ query: QUERY, variables: { slug: route.params.slug } })
+
+// const state = reactive({
+//     imgLoaded: false
+// })
+
+// const imageLoaded = () => {
+//     state.imgLoaded = true
+// }
+
+// const imgClasses = computed(() => {
+//     return state.imgLoaded ? 'opacity-100' : 'opacity-0'
+// })
+
+// const loadingClasses = computed(() => {
+//     return state.imgLoaded ? 'opacity-0 ' : 'opacity-100'
+// })
 
 const logoIsBlack = computed(() => {
     return data?.value?.work?.logoIsBlack ? 'dark:invert dark:brightness-200' : ''
