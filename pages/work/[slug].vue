@@ -5,7 +5,7 @@
                 {{ data.work.teaserLine }}
             </h1>
             <div class="relative z-10 flex flex-col items-start self-start justify-start gap-8 ">
-                <!-- <nuxt-link
+                <nuxt-link
                     class="fixed top-0 z-50 mt-4 transition-colors duration-300 -translate-x-1/2 lg:ml-4 btn left-1/2 lg:translate-x-0"
                     to="/"
                     title="Go back"
@@ -15,8 +15,8 @@
                         class="w-3 h-3 m-auto lg:w-6 lg:h-6"
                     />
                     <span class="hidden lg:block">Go back</span>
-                </nuxt-link> -->
-                <div class="flex w-full aspect-square sm:aspect-video 2xl:aspect-short 3xl:aspect-xshort">
+                </nuxt-link>
+                <div class="flex w-full mt-4 aspect-square sm:aspect-video 2xl:aspect-short 3xl:aspect-xshort">
                     <img
                         loading="eager"
                         :class="logoIsBlack"
@@ -32,10 +32,22 @@
         </div>
 
         <div class="relative w-full ml-auto lg:max-w-2/3 lg:mt-4 aspect-square md:aspect-video 2xl:max-w-3/4">
+            <div
+                v-if="!state.imgLoaded"
+                class="absolute inset-0 flex transition-opacity duration-500 bg-gradient-to-l dark:from-shiraz-700 from-gray-100 to-gray-200 dark:to-shiraz-600"
+                :class="loadingClasses"
+            >
+                <Icon
+                    name="eos-icons:bubble-loading"
+                    class="m-auto text-xl dark:text-shiraz-300"
+                />
+            </div>
             <datocms-image
-                class="w-full h-full"
+                class="w-full h-full transition-opacity duration-500"
+                :class="imgClasses"
                 picture-class="object-cover w-full h-full"
                 :data="data?.work?.heroImage?.responsiveImage"
+                :on-load="imageLoaded()"
             />
         </div>
 
@@ -87,7 +99,7 @@
 
         <div
             v-if="data.work.overview"
-            class="w-3/5 p-4 my-6 ml-auto text-xs bg-white bg-gradient-to-r from-shiraz-10 to-white dark:from-plum-600 dark:to-plum-500 dark:text-slate-300 aspect-video lg:max-w-3/4 lg:aspect-auto lg:p-8 2xl:p-12"
+            class="w-3/5 p-4 mt-10 mb-6 ml-auto text-xs bg-white bg-gradient-to-r from-shiraz-10 to-white dark:from-plum-600 dark:to-plum-500 dark:text-slate-300 aspect-video lg:max-w-3/4 lg:aspect-auto lg:p-8 2xl:p-12"
         >
             <h2 class="mb-8 font-serif text-base dark:text-plum-50 text-shiraz-500 lg:text-lg xl:text-xl">
                 Overview
@@ -135,6 +147,22 @@ import WORK_QUERY from '@/graphql/work'
 const invertLogo = (logoIsDark) => {
     return logoIsDark ? 'dark:invert dark:brightness-200' : null
 }
+
+const state = reactive({
+    imgLoaded: false
+})
+
+const imageLoaded = () => {
+    state.imgLoaded = true
+}
+
+const imgClasses = computed(() => {
+    return state.imgLoaded ? 'opacity-100' : 'opacity-0'
+})
+
+const loadingClasses = computed(() => {
+    return state.imgLoaded ? 'opacity-0 ' : 'opacity-100'
+})
 
 const route = useRoute()
 const { data } = await useGraphqlQuery({ query: WORK_QUERY, variables: { slug: route.params.slug } })
