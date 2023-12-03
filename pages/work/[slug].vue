@@ -5,7 +5,7 @@
                 {{ data.work.teaserLine }}
             </h1>
             <div class="relative z-10 flex flex-col items-start self-start justify-start gap-8 ">
-                <nuxt-link
+                <!-- <nuxt-link
                     class="fixed top-0 z-50 mt-4 transition-colors duration-300 -translate-x-1/2 lg:ml-4 btn left-1/2 lg:translate-x-0"
                     to="/"
                     title="Go back"
@@ -15,7 +15,7 @@
                         class="w-3 h-3 m-auto lg:w-6 lg:h-6"
                     />
                     <span class="hidden lg:block">Go back</span>
-                </nuxt-link>
+                </nuxt-link> -->
                 <div class="flex w-full aspect-square sm:aspect-video 2xl:aspect-short 3xl:aspect-xshort">
                     <img
                         loading="eager"

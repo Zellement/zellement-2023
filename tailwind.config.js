@@ -24,64 +24,34 @@ module.exports = {
         },
         fontSize: {
             '3xs': [
-                'clamp(0.60rem, calc(0.80rem + 0.00vw), 0.80rem)',
-                {
-                    lineHeight: 'calc(100% + 10px)'
-                }
+                'clamp(0.60rem, calc(0.80rem + 0.00vw), 0.80rem)'
             ],
             '2xs': [
-                'clamp(0.80rem, calc(0.80rem + 0.00vw), 0.90rem)',
-                {
-                    lineHeight: 'calc(100% + 10px)'
-                }
+                'clamp(0.80rem, calc(0.80rem + 0.00vw), 0.90rem)'
             ],
             xs: [
-                'clamp(1.00rem, calc(1.00rem + 0.00vw), 1.00rem)',
-                {
-                    lineHeight: 'calc(100% + 10px)'
-                }
+                'clamp(1.00rem, calc(1.00rem + 0.00vw), 1.00rem)'
             ],
             sm: [
-                'clamp(1.20rem, calc(1.16rem + 0.19vw), 1.38rem)',
-                {
-                    lineHeight: 'calc(100% + 10px)'
-                }
+                'clamp(1.20rem, calc(1.16rem + 0.19vw), 1.38rem)'
             ],
             base: [
-                'clamp(1.35rem, calc(1.34rem + 0.49vw), 1.625rem)',
-                {
-                    lineHeight: 'calc(100% + 10px)'
-                }
+                'clamp(1.35rem, calc(1.34rem + 0.49vw), 1.625rem)'
             ],
             lg: [
-                'clamp(1.73rem, calc(1.54rem + 0.94vw), 2.63rem)',
-                {
-                    lineHeight: 'calc(100% + 10px)'
-                }
+                'clamp(1.73rem, calc(1.54rem + 0.94vw), 2.63rem)'
             ],
             xl: [
-                'clamp(2.07rem, calc(1.75rem + 1.63vw), 3.63rem)',
-                {
-                    lineHeight: 'calc(100% + 10px)'
-                }
+                'clamp(2.07rem, calc(1.75rem + 1.63vw), 3.63rem)'
             ],
             '2xl': [
-                'clamp(2.49rem, calc(1.96rem + 2.64vw), 5.01rem)',
-                {
-                    lineHeight: 'calc(100% + 10px)'
-                }
+                'clamp(2.49rem, calc(1.96rem + 2.64vw), 5.01rem)'
             ],
             '3xl': [
-                'clamp(2.99rem, calc(2.17rem + 4.11vw), 6.91rem)',
-                {
-                    lineHeight: 'calc(100% + 10px)'
-                }
+                'clamp(2.99rem, calc(2.17rem + 4.11vw), 6.91rem)'
             ],
             '4xl': [
-                'clamp(3.49rem, calc(2.17rem + 4.11vw), 8.31rem)',
-                {
-                    lineHeight: 'calc(100% + 10px)'
-                }
+                'clamp(3.49rem, calc(2.17rem + 4.11vw), 8.31rem)'
             ]
         },
         screens: {

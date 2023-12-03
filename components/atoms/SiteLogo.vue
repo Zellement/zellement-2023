@@ -1,6 +1,6 @@
 <template>
     <div
-        class=" fixed transition-all duration-300 z-50 top-0 left-0 p-4 m-0   font-serif text-4xl leading-[0.75] flex flex-col lg:flex-row lg:items-end  gap-2 lg:gap-0 xl:p-16 xl:flex-col xl:items-start xl:space-y-10"
+        class="fixed transition-all space-y-4 duration-300 w-1/2 md:w-1/3 lg:w-1/2 z-20 top-0 left-0 pt-4 pl-4 m-0 pb-4 font-serif text-4xl leading-[0.75] flex flex-col pr-8 gap-2 lg:gap-0 xl:p-16 xl:flex-col xl:items-start xl:space-y-4"
     >
         <nuxt-link
             class="relative self-start group"
@@ -10,16 +10,16 @@
             <div class="absolute w-3/5 h-0.5 lg:h-1 -translate-x-1/2 bg-current left-1/2 top-1/2 group-hover:w-3/4 transition-width" />
         </nuxt-link>
 
-        <div class="flex flex-col gap-0.5 justify-end font-serif leading-none text-2xs lg:text-xs lg:pl-2 xl:mb-px xl:text-lg xl:pl-0 xl:opacity-50">
-            <span class="opacity-50 leading-[1]">
+        <div class="flex flex-col justify-end gap-1 font-serif text-lg leading-none lg:text-xs xl:pl-0 xl:mb-px xl:text-lg xl:opacity-50 xl:gap-0">
+            <span class="text-base leading-none opacity-50 lg:text-xl">
                 Dan Farrow
             </span>
-            <span class="leading-[1]">
+            <span class="leading-none lg:text-xl">
                 Front-end Developer
             </span>
-            <span class="ml-auto font-serif italic text-2xs">for
+            <span class="font-serif text-xs italic opacity-50 xl:ml-auto xl:mt-3">for
                 <nuxt-link
-                    class="relative z-10 hover:underline"
+                    class="hover:underline"
                     target="_blank"
                     :to="`https://www.effectdigital.com/`"
                 >@effectdigital</nuxt-link>
