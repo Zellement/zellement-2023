@@ -158,6 +158,10 @@ module.exports = {
             zIndex: {
                 '-1': -1
             },
+            transitionProperty: {
+                width: 'width',
+                spacing: 'margin, padding'
+            },
             inset: (theme, { negative }) => ({
                 ...theme('spacing'),
                 ...negative(theme('spacing'))

@@ -29,8 +29,10 @@
         </li>
         <li class="flex flex-row items-center gap-4 mt-8">
             <nuxt-link
-                class="flex text-xs"
-                to="/contact"
+                class="flex  hover:-translate-y-0.5 transition-transform"
+                to="https://www.linkedin.com/in/zellement/"
+                target="_blank"
+                aria-label="Visit my LinkedIn"
             >
                 <Icon
                     name="ri:linkedin-line"
@@ -38,8 +40,10 @@
                 />
             </nuxt-link>
             <nuxt-link
-                class="flex text-xs"
-                to="/contact"
+                class="flex  hover:-translate-y-0.5 transition-transform"
+                to="https://github.com/Zellement/"
+                target="_blank"
+                aria-label="Visit my GitHub profile"
             >
                 <Icon
                     name="ph:github-logo-light"
@@ -48,7 +52,7 @@
             </nuxt-link>
             <button
                 :class="darkModeIconClasses"
-                class="flex"
+                class="flex  hover:-translate-y-0.5 transition-transform"
                 aria-label="Use light mode"
                 @click="toggleColorMode('light')"
             >
@@ -58,7 +62,7 @@
                 />
             </button>
             <button
-                class="flex"
+                class="flex hover:-translate-y-0.5 transition-transform"
                 :class="lightModeIconClasses"
                 aria-label="Use dark mode"
                 @click="toggleColorMode('dark')"

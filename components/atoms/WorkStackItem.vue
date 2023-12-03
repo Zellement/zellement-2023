@@ -1,10 +1,10 @@
 <template>
     <li
-        class="p-1.5 shadow-lg lg:p-2 bg-white/50 dark:bg-plum-700/50 rounded-2xl"
+        class="p-1.5 transition-colors duration-300 shadow-lg lg:p-2 bg-white/50 dark:bg-shiraz-800/50 rounded-2xl"
     >
         <nuxt-link
             :to="`work/${props.data.slug}`"
-            class="relative grid items-center gap-4 p-4 text-gray-600 transition-all duration-300 bg-white shadow-lg dark:bg-plum-600 lg:p-8 lg:gap-12 lg:grid-cols-2 rounded-xl hover:bg-plum-500 hover:text-white group"
+            class="relative grid items-center gap-4 p-4 text-gray-600 transition-all duration-300 bg-white shadow-lg dark:bg-plum-600 lg:p-8 lg:gap-12 lg:grid-cols-2 rounded-xl hover:bg-plum-500 dark:hover:bg-plum-800 hover:text-white group"
         >
             <span class="sr-only">{{ props.data.title }}</span>
             <img
