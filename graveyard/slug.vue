@@ -172,6 +172,7 @@ const QUERY = `
             techStack {
                 title
                 id
+                logoIsDark
                 logo {
                     id
                     url
@@ -182,14 +183,16 @@ const QUERY = `
             slug
             date
             heroImage {
-                url
-                id
-                alt
-                responsiveImage {
+                responsiveImage(
+                    imgixParams: { fit: crop, w: 1000, h: 530, auto: format }
+                )
+                {
+                    id
                     src
                     width
                     height
-                    srcSet
+                    alt
+                    title
                 }
             }
             overview
@@ -221,10 +224,6 @@ const { data } = await useGraphqlQuery({ query: QUERY, variables: { slug: route.
 const logoIsBlack = computed(() => {
     return data?.value?.work?.logoIsBlack ? 'dark:invert dark:brightness-200' : ''
 })
-
-const invertLogo = (logoIsDark) => {
-    return logoIsDark ? 'dark:invert dark:brightness-200' : null
-}
 
 const isFreelance = computed(() => {
     return data?.value?.work?.employer?.title.includes('Freelance')

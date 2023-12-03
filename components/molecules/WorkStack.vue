@@ -41,7 +41,4 @@ const QUERY = `
 `
 const { data } = await useGraphqlQuery({ query: QUERY })
 
-// const invertLogoOnHover = computed(() => {
-//     return data.
-// })
 </script>

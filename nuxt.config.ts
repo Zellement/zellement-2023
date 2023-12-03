@@ -4,7 +4,7 @@ import { ofetch } from 'ofetch'
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-    ssr: true,
+    ssr: false,
     runtimeConfig: {
         public: {
             datoCmsToken: process.env.DATO_CMS_TOKEN
@@ -54,7 +54,7 @@ export default defineNuxtConfig({
         async 'nitro:config' (nitroConfig) {
             const workRoutes = await getWorkRoutes()
             // add the routes to the nitro config
-            nitroConfig.prerender.routes.push(...workRoutes)
+            nitroConfig.prerender.routes.push(...workRoutes, '/404')
         }
     },
     vite: {
