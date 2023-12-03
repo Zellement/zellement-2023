@@ -1,5 +1,5 @@
 <template>
-    <div class="relative z-10 w-full h-screen pb-12 ml-auto overflow-y-scroll text-black bg-white dark:text-slate-300 slug-content">
+    <div class="relative z-10 w-full h-screen pb-56 ml-auto overflow-y-scroll text-black bg-white lg:pb-12 dark:text-slate-300 slug-content">
         <div class="w-1/2 p-4 ml-auto overflow-hidden xl:px-16">
             <h1 class="w-2/5 text-gray-500/10 pointer-events-none font-serif absolute text-[9vw] dark:text-slate-50/10 lg:text-[7vw] xl:text-[6vw] 2xl:text-[5vw] leading-none top-0 mt-2.5 right-0 text-right">
                 {{ data.work.teaserLine }}
