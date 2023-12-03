@@ -47,7 +47,26 @@
             <datocms-image
                 class="w-full h-full col-start-1 row-start-1 transition-opacity duration-500 col-span-full relati"
                 picture-class="object-cover w-full h-full"
-                :data="imgData"
+                :data="featuredImgData.responsiveImage"
+            />
+        </div>
+
+        <div
+            v-if="screenshotImgData"
+            class="relative grid w-10/12 monitor p-1.5 pb-2 lg:pb-4 ml-auto mr-1/12 -mt-12 -translate-y-4 rounded-tl-lg  md:mr-4 md:w-7/12 lg:-mb-12 lg:-translate-y-20 lg:p-2  rounded-tr-xl from-gray-200 to-gray-300 bg-gradient-to-br dark:from-slate-700 dark:to-slate-900 lg:w-2/5 lg:mt-4 2xl:max-w-3/4 lg:max-w-3/4"
+        >
+            <div
+                class="inset-0 flex col-start-1 row-start-1 transition-opacity duration-500 col-span-full bg-gradient-to-l dark:from-shiraz-700 from-gray-100 to-gray-200 dark:to-shiraz-600"
+            >
+                <Icon
+                    name="eos-icons:bubble-loading"
+                    class="m-auto text-xl dark:text-shiraz-300"
+                />
+            </div>
+            <datocms-image
+                class="w-full h-full col-start-1 row-start-1 transition-opacity duration-500 col-span-full "
+                picture-class="w-full h-auto "
+                :data="screenshotImgData.responsiveImage"
             />
         </div>
 
@@ -180,12 +199,23 @@ const QUERY = `
             heroImage {
                 url
                 id
-                alt
                 responsiveImage {
                     src
                     width
                     height
                     srcSet
+                    alt
+                }
+            }
+            screenshot {
+                url
+                id
+                responsiveImage {
+                    src
+                    width
+                    height
+                    srcSet
+                    alt
                 }
             }
             overview
@@ -208,8 +238,12 @@ const displayUrl = computed(() => {
     return data?.value.work.website.replace('https://', '').replace('/', '')
 })
 
-const imgData = computed(() => {
-    return workData.value?.heroImage?.responsiveImage
+const featuredImgData = computed(() => {
+    return workData.value?.heroImage
+})
+
+const screenshotImgData = computed(() => {
+    return workData.value?.screenshot
 })
 
 const logoIsBlack = computed(() => {

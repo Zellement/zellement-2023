@@ -30,7 +30,7 @@
             </div>
         </div>
 
-        <div class="relative w-full ml-auto overflow-hidden lg:max-w-8/12 lg:mt-4 ">
+        <div class="relative w-full ml-auto overflow-hidden lg:mt-4 2xl:max-w-3/4 lg:max-w-3/5 ">
             <nuxt-picture
                 fit="cover"
                 src="dan-landscape.jpg"
@@ -92,7 +92,7 @@
                 <p>I'm hugely into a select few genres of music, but mostly a massive metalhead. From old school metal bands like <em>Slayer</em> and <em>Metallica</em>, all the way through to heavier bands such as <em>Lamb of God</em>, <em>Behemoth</em> and <em>Sylosis</em>.</p>
             </div>
         </div>
-        <div class="relative w-full ml-auto overflow-hidden lg:max-w-8/12 lg:mt-4 ">
+        <div class="relative w-full ml-auto overflow-hidden lg:mt-4 2xl:max-w-3/4 lg:max-w-3/5 ">
             <nuxt-picture
                 fit="cover"
                 src="download.jpg"
