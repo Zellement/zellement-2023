@@ -54,7 +54,7 @@ export default defineNuxtConfig({
         async 'nitro:config' (nitroConfig) {
             const workRoutes = await getWorkRoutes()
             // add the routes to the nitro config
-            nitroConfig.prerender.routes.push(...workRoutes, '/404')
+            nitroConfig.prerender.routes.push(...workRoutes)
         }
     },
     vite: {
