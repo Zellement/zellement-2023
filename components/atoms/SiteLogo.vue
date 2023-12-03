@@ -13,7 +13,7 @@
                 Dan Farrow
             </h1>
             <h2 class="leading-[1]">
-                Creative Developer
+                Front-end Developer
             </h2>
         </div>
     </nuxt-link>

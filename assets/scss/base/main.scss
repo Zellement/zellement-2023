@@ -1,9 +1,9 @@
 html.dark body {
-    @apply bg-gradient-to-r from-shiraz-700 via-shiraz-600 to-shiraz-700 text-white h-screen font-sans bg-fixed;
+    @apply bg-gradient-to-r from-shiraz-700 via-shiraz-600 to-shiraz-700 text-shiraz-10 h-screen font-sans bg-fixed;
 }
 
 html.light body {
-    @apply bg-gradient-to-br from-white via-shiraz-50 to-plum-600 text-black min-h-screen font-sans bg-fixed;
+    @apply bg-gradient-to-br from-white via-shiraz-50 to-plum-600 text-plum-600 min-h-screen font-sans bg-fixed;
 }
 
 html {
