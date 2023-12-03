@@ -1,9 +1,9 @@
 <template>
     <div class="relative z-10 w-full h-screen pb-12 ml-auto overflow-y-scroll text-black bg-white dark:text-slate-300 slug-content">
         <div class="w-1/2 p-4 ml-auto overflow-hidden xl:px-16">
-            <h2 class="w-2/5 text-gray-500/10 pointer-events-none font-serif absolute text-[9vw] dark:text-slate-50/10 lg:text-[7vw] xl:text-[6vw] 2xl:text-[5vw] leading-none top-0 mt-2.5 right-0 text-right">
+            <h1 class="w-2/5 text-gray-500/10 pointer-events-none font-serif absolute text-[9vw] dark:text-slate-50/10 lg:text-[7vw] xl:text-[6vw] 2xl:text-[5vw] leading-none top-0 mt-2.5 right-0 text-right">
                 {{ data.work.teaserLine }}
-            </h2>
+            </h1>
             <div class="relative z-10 flex flex-col items-start self-start justify-start gap-8 ">
                 <nuxt-link
                     class="fixed top-0 z-50 mt-4 transition-colors duration-300 -translate-x-1/2 lg:ml-4 btn left-1/2 lg:translate-x-0"
@@ -130,69 +130,14 @@
 <script setup>
 
 import { Image as datocmsImage } from 'vue-datocms'
-
-import { computed } from 'vue'
+import WORK_QUERY from '@/graphql/work'
 
 const invertLogo = (logoIsDark) => {
     return logoIsDark ? 'dark:invert dark:brightness-200' : null
 }
 
-const QUERY = `
-    query WorkQuery ($slug: String!) {
-        work(filter: {slug: {eq: $slug}}) {
-            id
-            title
-            website
-            employer {
-                title
-                id
-                website
-            }
-            logoIsBlack
-            logo {
-                id
-                url
-                format
-                responsiveImage {
-                    alt
-                    base64
-                    bgColor
-                    title
-                }
-            }
-            techStack {
-                title
-                id
-                logoIsDark
-                logo {
-                    id
-                    url
-                }
-            }
-            teaserLine
-            teaserStack
-            slug
-            date
-            heroImage {
-                responsiveImage(
-                    imgixParams: { fit: crop, w: 1000, h: 530, auto: format }
-                )
-                {
-                    src
-                    width
-                    height
-                    alt
-                    title
-                }
-            }
-            overview
-            additional
-        }
-    }
-`
-
 const route = useRoute()
-const { data } = await useGraphqlQuery({ query: QUERY, variables: { slug: route.params.slug } })
+const { data } = await useGraphqlQuery({ query: WORK_QUERY, variables: { slug: route.params.slug } })
 
 const logoIsBlack = computed(() => {
     return data?.value?.work?.logoIsBlack ? 'dark:invert dark:brightness-200' : ''

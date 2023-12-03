@@ -9,12 +9,12 @@
         </div>
 
         <div class="flex flex-col gap-0.5 justify-end font-serif leading-none text-2xs lg:text-xs lg:pl-2 xl:mb-px xl:text-lg xl:pl-0 xl:opacity-50">
-            <h1 class="opacity-50 leading-[1]">
+            <span class="opacity-50 leading-[1]">
                 Dan Farrow
-            </h1>
-            <h2 class="leading-[1]">
+            </span>
+            <span class="leading-[1]">
                 Front-end Developer
-            </h2>
+            </span>
         </div>
     </nuxt-link>
 </template>
