@@ -5,7 +5,7 @@
 
     &__link {
 
-        @apply relative leading-none p-0;
+        @apply relative leading-none p-0 transition-colors;
 
         &:after {
             @apply content-[''] absolute bottom-0 mb-2 left-1/2 w-0 h-0.5 bg-current transition-all duration-200 2xl:h-2;

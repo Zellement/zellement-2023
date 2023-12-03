@@ -26,7 +26,7 @@
                     I have over 18 years of experience working in leading development &amp; marketing agencies across the UK, and I've been lucky to have the chance to work on a multitude of languages, platforms and frameworks.
                 </p>
 
-                <p>With a strong historical background in WordPress, in recent years I have worked predominantly Headless CMS platforms such as <em>Contentful</em>, <em>DatoCMS</em>, <em>Prismic</em>, delivered with front-ends such as <em>GatsbyJS</em>, <em>NextJS</em> and <em>NuxtJS</em>.</p>
+                <p>With a strong historical background in <em>WordPress</em>, in recent years I have worked predominantly with Headless CMS platforms such as <em>Contentful</em>, <em>DatoCMS</em>, <em>Prismic</em>, delivered with front-ends such as <em>GatsbyJS</em>, <em>NextJS</em> and <em>NuxtJS</em>.</p>
             </div>
         </div>
 
