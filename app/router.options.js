@@ -1,5 +1,5 @@
 export default {
-    scrollBehavior () {
+    scrollBehavior (to, from) {
         return { top: 0 }
     },
     strict: true,

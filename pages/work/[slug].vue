@@ -187,6 +187,7 @@ const QUERY = `
             techStack {
                 title
                 id
+                logoIsDark
                 logo {
                     id
                     url
