@@ -31,10 +31,6 @@ export default defineNuxtConfig({
     build: {
         extractCSS: true
     },
-    image: {
-        provider: 'contentful',
-        contentful: {}
-    },
     app: {
         head: {
             htmlAttrs: {

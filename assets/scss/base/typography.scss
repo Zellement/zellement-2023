@@ -80,7 +80,7 @@ $font-dir: "../fonts";
 // }
 
 em {
-  @apply font-light italic;
+  @apply font-serif;
 }
 
 strong {
@@ -94,20 +94,26 @@ hr {
 .content {
   @for $i from 2 through 6 {
     h#{$i} {
-      @apply font-bold;
+      @apply font-serif ;
     }
+  }
+  h2 {
+    @apply text-base
+  }
+  h3 {
+    @apply text-sm;
   }
   p strong {
     @apply font-bold text-sm;
   }
-  > * + * {
-    @apply mt-6;
-  }
+//   > * + * {
+//     @apply mt-;
+//   }
   ul {
-    @apply mb-6 pl-6 text-sm flex flex-col space-y-2;
+    @apply mb-6 flex flex-col space-y-2;
 
     li {
-      @apply ml-6 pl-4 list-disc leading-none;
+      @apply ml-4 pl-4 list-disc leading-none;
     }
   }
   p > a {
@@ -123,32 +129,5 @@ hr {
     }
   }
 
-  &--prominent {
-    p,
-    p strong {
-      @apply text-base font-bold;
-    }
-    p + * {
-      @apply mt-6;
-    }
-  }
 
-  &--media-text {
-    p,
-    p strong {
-      @apply text-lg font-bold;
-    }
-    p + * {
-      @apply mt-6;
-    }
-  }
-  &--small {
-    ul {
-      @apply pl-2;
-
-      li {
-        @apply pl-2;
-      }
-    }
-  }
 }
