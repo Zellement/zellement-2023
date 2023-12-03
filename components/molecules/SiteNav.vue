@@ -93,11 +93,11 @@ const isLightMode = computed(() => {
 })
 
 const lightModeIconClasses = computed(() => {
-    return isLightMode.value ? 'opacity-100' : 'opacity-50 pointer-events-none'
+    return isLightMode.value ? 'opacity-100' : 'opacity-50 '
 })
 
 const darkModeIconClasses = computed(() => {
-    return isLightMode.value ? 'opacity-50 pointer-events-none' : 'opacity-100'
+    return isLightMode.value ? 'opacity-50 ' : 'opacity-100'
 })
 
 // const isWorkPage = computed(() => {

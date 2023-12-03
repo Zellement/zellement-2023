@@ -11,10 +11,10 @@
         </nuxt-link>
 
         <div class="flex flex-col justify-end gap-1 font-serif text-lg leading-none lg:text-xs xl:pl-0 xl:mb-px xl:text-lg xl:opacity-50 xl:gap-0">
-            <span class="text-base leading-none opacity-50 lg:text-xl">
+            <span class="text-base leading-none opacity-50 lg:text-lg 2xl:text-xl">
                 Dan Farrow
             </span>
-            <span class="leading-none lg:text-xl">
+            <span class="leading-none lg:text-lg 2xl:text-xl">
                 Front-end Developer
             </span>
             <span class="font-serif text-xs italic opacity-50 xl:ml-auto xl:mt-3">for

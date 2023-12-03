@@ -35,7 +35,7 @@
             </div>
         </div>
 
-        <div class="relative grid w-full ml-auto lg:max-w-2/3 lg:mt-4 aspect-square md:aspect-video 2xl:max-w-3/4">
+        <div class="relative grid w-full ml-auto lg:w-3/5 lg:mt-4 aspect-square md:aspect-video 2xl:max-w-3/4 lg:max-w-3/4 ">
             <div
                 class="inset-0 flex col-start-1 row-start-1 transition-opacity duration-500 col-span-full bg-gradient-to-l dark:from-shiraz-700 from-gray-100 to-gray-200 dark:to-shiraz-600"
             >
@@ -112,7 +112,7 @@
 
         <div
             v-if="data?.work.additional"
-            class="w-3/5 p-4 my-6 ml-auto text-xs text-black bg-gradient-to-r from-plum-50 to-white dark:text-white dark:from-shiraz-700 dark:to-shiraz-800 xl:max-w-1/4 xl:p-8 2xl:p-12 xl:mr-1/4"
+            class="w-3/5 p-4 my-6 ml-auto text-xs text-black lg:-translate-x-8 bg-gradient-to-r from-plum-50 to-white dark:text-white dark:from-shiraz-700 dark:to-shiraz-800 xl:max-w-1/3 xl:p-8 2xl:p-12 xl:mr-1/6"
         >
             <h3 class="mb-4 font-serif text-sm text-plum-500 dark:text-shiraz-100 lg:text-base">
                 Additional
@@ -198,10 +198,6 @@ const route = useRoute()
 
 const { data } = await useGraphqlQuery({ query: QUERY, variables: { slug: route.params.slug } })
 
-const state = reactive({
-    imgLoaded: false
-})
-
 // Computed
 
 const workData = computed(() => {
@@ -236,12 +232,8 @@ const invertLogo = (logoIsDark) => {
     return logoIsDark ? 'dark:invert dark:brightness-200' : null
 }
 
-onUnmounted(() => {
-    state.imgLoaded = false
-})
-
-// if (!data?.value?.work?.slug) {
-//     navigateTo('/')
-// }
+if (!data?.value?.work?.slug) {
+    navigateTo('/')
+}
 
 </script>
