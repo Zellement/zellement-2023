@@ -104,7 +104,7 @@ const getWorkRoutes = async () => {
     const { data } = await useGraphqlQuery({ query: WORK_QUERY })
 
     const routes = data.allWorks
-        .map((item) => `/work/${item.slug}`)
+        .map((item) => `/work/${item.slug}/`)
     return routes
 }
 
