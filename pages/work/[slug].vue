@@ -6,7 +6,7 @@
             </h2>
             <div class="relative z-10 flex flex-col items-start self-start justify-start gap-8 ">
                 <nuxt-link
-                    class="fixed top-0 mt-4 transition-colors duration-300 -translate-x-1/2 lg:ml-4 btn left-1/2 lg:translate-x-0"
+                    class="fixed top-0 z-50 mt-4 transition-colors duration-300 -translate-x-1/2 lg:ml-4 btn left-1/2 lg:translate-x-0"
                     to="/"
                     title="Go back"
                 >
@@ -58,6 +58,7 @@
                             <img
                                 :src="item?.logo?.url"
                                 class="w-full h-auto"
+                                :class="invertLogo(item?.logoIsDark)"
                             >
                         </span>
                     </li>
@@ -70,7 +71,7 @@
                     </template>
                     <template v-else>
                         <nuxt-link
-                            class="leading-none transition-colors duration-300 hover:text-plum 3xl:flex 3xl:gap-1 3xl:items-end"
+                            class="leading-none transition-colors duration-300 hover:text-shiraz-500 3xl:flex 3xl:gap-1 3xl:items-end"
                             :to="data.work.employer.website"
                             target="_blank"
                         >
@@ -112,7 +113,7 @@
 
         <!-- Visit website button -->
         <nuxt-link
-            class="fixed bottom-0 right-0 flex flex-row items-center gap-2 px-1 py-0.5 mb-4 mr-4 text-white transition-colors duration-300 rounded  lg:px-2 lg:py-1.5 bg-gradient-to-br from-plum-500 to-shiraz hover:underline"
+            class="fixed bottom-0 right-0 flex flex-row border border-white border-opacity-10 items-center gap-2 px-1 py-0.5 mb-4 mr-4 text-white  duration-300 rounded  lg:px-2 lg:py-1.5 bg-gradient-to-br from-plum-500 to-shiraz hover:border-opacity-50 hover:shadow-xl transition-all"
             :to="data.work.website"
             target="_blank"
             title="Visit website"
@@ -131,6 +132,10 @@
 import { Image as datocmsImage } from 'vue-datocms'
 
 import { computed } from 'vue'
+
+const invertLogo = (logoIsDark) => {
+    return logoIsDark ? 'dark:invert dark:brightness-200' : null
+}
 
 const QUERY = `
     query WorkQuery ($slug: String!) {
@@ -158,6 +163,7 @@ const QUERY = `
             techStack {
                 title
                 id
+                logoIsDark
                 logo {
                     id
                     url

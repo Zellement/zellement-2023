@@ -1,5 +1,6 @@
 import { defineNuxtConfig } from 'nuxt/config'
 import eslintVitePlugin from 'vite-plugin-eslint'
+import { ofetch } from 'ofetch'
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
@@ -53,6 +54,13 @@ export default defineNuxtConfig({
         },
         pageTransition: { name: 'page', mode: 'out-in' }
     },
+    hooks: {
+        async 'nitro:config' (nitroConfig) {
+            const workRoutes = await getWorkRoutes()
+            // add the routes to the nitro config
+            nitroConfig.prerender.routes.push(...workRoutes, '/404')
+        }
+    },
     vite: {
         plugins: [
             eslintVitePlugin({
@@ -61,3 +69,43 @@ export default defineNuxtConfig({
         ]
     }
 })
+
+const useGraphqlQuery = async (options) => {
+    const { query, variables = {} } = options
+    const key = JSON.stringify(options)
+    return ofetch('https://graphql.datocms.com', {
+        key,
+        method: 'POST',
+        headers: {
+            Authorization: `Bearer ${process.env.DATO_CMS_TOKEN}`
+        },
+        body: {
+            query,
+            variables
+        },
+        transform: ({ data, errors }) => {
+            if (errors) throw new errors()
+
+            return data
+        }
+    })
+}
+
+const WORK_QUERY = `
+query workQuery {
+    allWorks {
+      id
+      slug
+    }
+  }
+`
+
+const getWorkRoutes = async () => {
+    const { data } = await useGraphqlQuery({ query: WORK_QUERY })
+
+    const routes = data.allWorks
+        .map((item) => `/work/${item.slug}`)
+    return routes
+}
+
+console.log(getWorkRoutes)

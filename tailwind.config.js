@@ -159,8 +159,7 @@ module.exports = {
                 '-1': -1
             },
             transitionProperty: {
-                width: 'width',
-                spacing: 'margin, padding'
+                width: 'width'
             },
             inset: (theme, { negative }) => ({
                 ...theme('spacing'),
