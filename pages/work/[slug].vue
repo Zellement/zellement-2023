@@ -1,12 +1,12 @@
 <template>
     <div
         v-show="data"
-        :key="data?.work?.id"
+        :key="workData?.id"
         class="relative z-10 w-full h-screen pb-56 ml-auto overflow-y-scroll text-black bg-white lg:pb-12 dark:text-slate-300 slug-content"
     >
         <div class="w-1/2 p-4 ml-auto overflow-hidden xl:px-16">
             <h1 class="w-2/5 text-gray-500/10 pointer-events-none font-serif absolute text-[9vw] dark:text-slate-50/10 lg:text-[7vw] xl:text-[6vw] 2xl:text-[5vw] leading-none top-0 mt-2.5 right-0 text-right">
-                {{ data?.work?.teaserLine }}
+                {{ workData?.teaserLine }}
             </h1>
             <div class="relative z-10 flex flex-col items-start self-start justify-start gap-8 ">
                 <nuxt-link
@@ -26,20 +26,18 @@
                         :class="logoIsBlack"
                         :alt="`${data?.work.title} logo`"
                         class="flex w-full h-auto mt-auto ml-auto lg:w-auto lg:max-h-32"
-                        :src="data?.work?.logo?.url"
+                        :src="workData?.logo?.url"
                     >
                 </div>
                 <h1 class="sr-only">
-                    {{ data?.work?.title }}
+                    {{ workData?.title }}
                 </h1>
             </div>
         </div>
 
-        <!-- <div class="relative w-full ml-auto lg:max-w-2/3 lg:mt-4 aspect-square md:aspect-video 2xl:max-w-3/4">
+        <div class="relative grid w-full ml-auto lg:max-w-2/3 lg:mt-4 aspect-square md:aspect-video 2xl:max-w-3/4">
             <div
-                v-if="!state.imgLoaded"
-                class="absolute inset-0 flex transition-opacity duration-500 bg-gradient-to-l dark:from-shiraz-700 from-gray-100 to-gray-200 dark:to-shiraz-600"
-                :class="loadingClasses"
+                class="inset-0 flex col-start-1 row-start-1 transition-opacity duration-500 col-span-full bg-gradient-to-l dark:from-shiraz-700 from-gray-100 to-gray-200 dark:to-shiraz-600"
             >
                 <Icon
                     name="eos-icons:bubble-loading"
@@ -47,13 +45,11 @@
                 />
             </div>
             <datocms-image
-                class="w-full h-full transition-opacity duration-500"
-                :class="imgClasses"
+                class="w-full h-full col-start-1 row-start-1 transition-opacity duration-500 col-span-full relati"
                 picture-class="object-cover w-full h-full"
-                :data="data?.work?.heroImage?.responsiveImage"
-                :on-load="imageLoaded()"
+                :data="imgData"
             />
-        </div> -->
+        </div>
 
         <div class="w-1/2 p-4 ml-auto overflow-hidden 3xl:flex 3xl:flex-row 3xl:gap-16 3xl:items-center 3xl:justify-between ">
             <ul
@@ -99,9 +95,9 @@
             </div>
         </div>
 
-        <!-- <div class="hidden w-1/2 h-px ml-auto bg-gradient-to-r from-shiraz to-plum 3xl:block" /> -->
+        <div class="hidden w-1/2 h-px ml-auto bg-gradient-to-r from-shiraz to-plum 3xl:block" />
 
-        <!-- <div
+        <div
             v-if="data?.work.overview"
             class="w-3/5 p-4 mt-10 mb-6 ml-auto text-xs bg-white bg-gradient-to-r from-shiraz-10 to-white dark:from-plum-600 dark:to-plum-500 dark:text-slate-300 aspect-video lg:max-w-3/4 lg:aspect-auto lg:p-8 2xl:p-12"
         >
@@ -112,9 +108,9 @@
                 class=" lg:text-sm content"
                 v-html="data?.work.overview"
             />
-        </div> -->
+        </div>
 
-        <!-- <div
+        <div
             v-if="data?.work.additional"
             class="w-3/5 p-4 my-6 ml-auto text-xs text-black bg-gradient-to-r from-plum-50 to-white dark:text-white dark:from-shiraz-700 dark:to-shiraz-800 xl:max-w-1/4 xl:p-8 2xl:p-12 xl:mr-1/4"
         >
@@ -125,7 +121,7 @@
                 class="dark:text-gray-400 text-2xs lg:text-xs content"
                 v-html="data?.work.additional"
             />
-        </div> -->
+        </div>
 
         <nuxt-link
             class="fixed bottom-0 right-0 flex flex-row border border-white border-opacity-10 items-center gap-2 px-1 py-0.5 mb-4 mr-4 text-white  duration-300 rounded  lg:px-2 lg:py-1.5 bg-gradient-to-br from-plum-500 to-shiraz hover:border-opacity-50 hover:shadow-xl transition-all"
@@ -133,7 +129,7 @@
             target="_blank"
             title="Visit website"
         >
-            <span class="hidden lg:block">{{ data?.work.website.replace('https://','').replace('/','') }}</span>
+            <span class="hidden lg:block">{{ displayUrl }}</span>
             <Icon
                 name="uil:external-link-alt"
                 class="w-4 h-5 lg:w-6 lg:h-6"
@@ -144,7 +140,7 @@
 
 <script setup>
 
-// import { Image as datocmsImage } from 'vue-datocms'
+import { Image as datocmsImage } from 'vue-datocms'
 
 const QUERY = `
     query WorkQuery ($slug: String!) {
@@ -202,42 +198,50 @@ const route = useRoute()
 
 const { data } = await useGraphqlQuery({ query: QUERY, variables: { slug: route.params.slug } })
 
-// const state = reactive({
-//     imgLoaded: false
-// })
+const state = reactive({
+    imgLoaded: false
+})
 
-// const imageLoaded = () => {
-//     state.imgLoaded = true
-// }
+// Computed
 
-// const imgClasses = computed(() => {
-//     return state.imgLoaded ? 'opacity-100' : 'opacity-0'
-// })
+const workData = computed(() => {
+    return data.value?.work
+})
 
-// const loadingClasses = computed(() => {
-//     return state.imgLoaded ? 'opacity-0 ' : 'opacity-100'
-// })
+const displayUrl = computed(() => {
+    return data?.value.work.website.replace('https://', '').replace('/', '')
+})
+
+const imgData = computed(() => {
+    return workData.value?.heroImage?.responsiveImage
+})
 
 const logoIsBlack = computed(() => {
     return data?.value?.work?.logoIsBlack ? 'dark:invert dark:brightness-200' : ''
 })
 
-const invertLogo = (logoIsDark) => {
-    return logoIsDark ? 'dark:invert dark:brightness-200' : null
-}
-
 const isFreelance = computed(() => {
     return data?.value?.work?.employer?.title.includes('Freelance')
 })
-
-// if (!data?.value?.work?.slug) {
-//     navigateTo('/')
-// }
 
 const getYear = computed(() => {
     const date = new Date(data?.value.work?.date)
     const year = date.getFullYear()
     return year
 })
+
+// Methods
+
+const invertLogo = (logoIsDark) => {
+    return logoIsDark ? 'dark:invert dark:brightness-200' : null
+}
+
+onUnmounted(() => {
+    state.imgLoaded = false
+})
+
+// if (!data?.value?.work?.slug) {
+//     navigateTo('/')
+// }
 
 </script>
