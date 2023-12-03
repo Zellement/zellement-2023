@@ -17,7 +17,7 @@ export default defineNuxtConfig({
     },
     target: 'static',
     devServerHandlers: [], // Fix for issue - https://github.com/nuxt-modules/tailwindcss/issues/480
-    modules: ['@nuxtjs/color-mode', 'nuxt-icon', '@nuxtjs/tailwindcss', '@nuxt/image'],
+    modules: ['@nuxtjs/color-mode', '@nuxtjs/tailwindcss', '@nuxt/image'],
     colorMode: {
         classSuffix: '',
         preference: 'dark'
@@ -107,5 +107,3 @@ const getWorkRoutes = async () => {
         .map((item) => `/work/${item.slug}`)
     return routes
 }
-
-console.log(getWorkRoutes)
