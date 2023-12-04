@@ -16,7 +16,7 @@
                         I have over 18 years of experience working in leading development &amp; marketing agencies across the UK, and I've been lucky to have the chance to work on a multitude of languages, platforms and frameworks.
                     </p>
 
-                    <p>With a strong historical background in <em>WordPress</em>, in recent years I have worked predominantly with Headless CMS platforms such as <em>Contentful</em>, <em>DatoCMS</em>, <em>Prismic</em>, delivered with front-ends such as <em>GatsbyJS</em>, <em>NextJS</em> and <em>NuxtJS</em>.</p>
+                    <p>With a strong historical background in <em>WordPress</em>, in recent years I have worked predominantly with Headless CMS platforms such as <em>Contentful</em>, <em>DatoCMS</em> &amp; <em>Prismic</em>, delivered with front-ends such as <em>GatsbyJS</em>, <em>NextJS</em> and <em>NuxtJS</em>.</p>
                 </div>
             </div>
 
@@ -28,7 +28,7 @@
                     :img-attrs="{class:'object-cover w-full h-full'}"
                 />
             </div>
-            <div class="w-2/3 p-4 ml-auto bg-white dark:bg-slate-900 lg:w-1/2 xl:px-16">
+            <div class="w-2/3 p-4 p-6 ml-auto bg-white lg:pt-12 dark:bg-slate-900 lg:w-1/2 xl:px-16">
                 <div class="flex flex-col items-start self-start justify-start gap-8 content">
                     <h2 class="font-serif text-sm">
                         Designer
@@ -37,12 +37,25 @@
                     <p>I've been designing websites since the late nineties, when web designer and webmaster were the catch all roles. I have lived through iterations of fixed width, responsive, mobile-first, gradients, no gradients, drop shadows, no drop shadows, gradients again...</p>
 
                     <p class="w-full p-4 -mx-8 text-xs text-white bg-shiraz-500 dark:border-slate-800">
-                        It's safe to say I've seen a lot of change in the industry as regards design. Although I no longer class myself as a designer, I still dabble occasionally, particularly for freelance.
+                        It's safe to say I've seen a lot of change in the industry as regards design. Although I no longer class myself as a designer, I still dabble occasionally, particularly for <nuxt-link
+                            class="font-serif"
+                            to="/"
+                        >
+                            freelance.
+                        </nuxt-link>
                     </p>
 
                     <h2>Manager &amp; Leader</h2>
 
-                    <p>Whilst with <em>Adtrak</em>, I held numerous different managerial and leadership roles, including:</p>
+                    <p>
+                        Whilst with <nuxt-link
+                            target="_blank"
+                            class="font-serif"
+                            to="https://www.adtrak.co.uk"
+                        >
+                            Adtrak
+                        </nuxt-link>, I held numerous different managerial and leadership roles, including:
+                    </p>
                     <ul>
                         <li>Head of Web Design</li>
                         <li>Senior Manager</li>

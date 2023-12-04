@@ -2,12 +2,12 @@
     &:before {
         content: '';
 
-        @apply w-32  absolute top-full left-1/2 -translate-x-1/2 h-6 bg-gradient-to-t dark:from-slate-700 dark:to-slate-800 from-gray-200 to-gray-400;
+        @apply w-32  absolute top-full left-1/2 -translate-x-1/2 h-6 bg-gradient-to-t from-slate-700 to-slate-800;
     }
     &:after {
         content: '';
         top: calc(100% + 24px);
 
-        @apply w-56  absolute left-1/2 -translate-x-1/2 h-2 bg-gradient-to-t from-gray-200 to-gray-300 dark:from-slate-700 dark:to-slate-800;
+        @apply w-56 rounded-tl rounded-tr absolute left-1/2 -translate-x-1/2 h-2 bg-gradient-to-t from-slate-700 to-slate-800;
     }
 }

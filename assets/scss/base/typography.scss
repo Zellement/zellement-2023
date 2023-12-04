@@ -110,18 +110,22 @@ hr {
 //     @apply mt-;
 //   }
   ul {
-    @apply mb-6 flex flex-col space-y-2;
+    @apply flex flex-col space-y-2 list-none;
 
     li {
-      @apply ml-4 pl-4 list-disc leading-none;
+      @apply ml-4 pl-4 list-none relative;
+
+      &:after {
+        @apply content-[''] absolute top-0 left-0 w-1.5 h-1.5 translate-y-2.5 bg-shiraz-500;
+      }
     }
   }
-  p > a {
-    @apply relative text-sm;
+  p a {
+    @apply relative;
     @screen lg {
       &:after {
         content: "";
-        @apply w-full h-px bg-white absolute top-full left-1/2 -translate-x-1/2 transition-all duration-300;
+        @apply w-full h-px bg-current absolute top-full left-1/2 -translate-x-1/2 transition-all duration-300;
       }
       &:hover:after {
         @apply w-1;
