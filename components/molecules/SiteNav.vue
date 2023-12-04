@@ -1,5 +1,5 @@
 <template>
-    <nav class="fixed bottom-0 left-0 z-20 flex flex-col gap-2 p-4 font-serif text-xl list-none site-nav lg:text-xl xl:text-2xl xl:p-16 3xl:text-3xl lg:gap-0">
+    <nav class="fixed bottom-0 left-0 z-20 flex flex-col gap-2 p-4 font-serif text-[6vw] list-none site-nav lg:text-xl xl:text-2xl xl:p-16 3xl:text-3xl lg:gap-0">
         <li
             :class="isWorkPage"
             class="site-nav__list"
@@ -27,7 +27,7 @@
                 Contact
             </nuxt-link>
         </li>
-        <li class="flex flex-row items-center gap-4 mt-8">
+        <li class="flex flex-row items-center gap-2 mt-8 lg:gap-4">
             <nuxt-link
                 class="flex  hover:-translate-y-0.5 transition-transform"
                 to="https://www.linkedin.com/in/zellement/"
@@ -36,7 +36,7 @@
             >
                 <Icon
                     name="ri:linkedin-line"
-                    class="w-5 h-5 m-auto lg:w-6 lg:h-6"
+                    class="w-4 h-4 m-auto lg:w-6 lg:h-6"
                 />
             </nuxt-link>
             <nuxt-link
@@ -47,7 +47,7 @@
             >
                 <Icon
                     name="ph:github-logo-light"
-                    class="w-5 h-5 m-auto lg:w-6 lg:h-6"
+                    class="w-4 h-4 m-auto lg:w-6 lg:h-6"
                 />
             </nuxt-link>
             <button
@@ -58,7 +58,7 @@
             >
                 <Icon
                     name="material-symbols:sunny-rounded"
-                    class="w-5 h-5 m-auto lg:w-6 lg:h-6"
+                    class="w-4 h-4 m-auto lg:w-6 lg:h-6"
                 />
             </button>
             <button
@@ -69,7 +69,7 @@
             >
                 <Icon
                     name="material-symbols-light:nightlight"
-                    class="w-5 h-5 m-auto lg:w-6 lg:h-6"
+                    class="w-4 h-4 m-auto lg:w-6 lg:h-6"
                 />
             </button>
         </li>
