@@ -11,7 +11,7 @@
                     {{ workData?.teaserLine }}
                 </h1>
                 <div class="relative z-10 flex flex-col items-start self-start justify-start gap-8 ">
-                    <div class="flex w-full mt-4 aspect-[6/5] sm:aspect-video 2xl:aspect-short 3xl:aspect-xshort">
+                    <div class="flex w-full mt-4 aspect-[15/9] sm:aspect-video 2xl:aspect-short 3xl:aspect-xshort">
                         <img
                             loading="eager"
                             :class="logoIsBlack"
