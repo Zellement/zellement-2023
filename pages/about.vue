@@ -25,6 +25,7 @@
                     src="/images/dan-landscape.jpg"
                     class="w-full h-full"
                     format="webp"
+                    sizes="100vw sm:50vw md:400px"
                     :img-attrs="{class:'object-cover w-full h-full'}"
                 />
             </div>
@@ -100,6 +101,7 @@
                     format="webp"
                     src="/images/download.jpg"
                     class="w-full h-full"
+                    sizes="100vw sm:50vw md:400px"
                     :img-attrs="{class:'object-cover w-full h-full'}"
                 />
             </div>
