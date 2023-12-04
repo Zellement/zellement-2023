@@ -16,6 +16,12 @@ export default defineNuxtConfig({
         classSuffix: '',
         preference: 'dark'
     },
+    image: {
+        provider: 'netlify',
+        netlify: {
+            baseURl: process.env.IMAGES_URL
+        }
+    },
     tailwindcss: {
         cssPath: '~/assets/scss/app.scss'
     },

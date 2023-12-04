@@ -22,7 +22,6 @@
 
             <div class="relative w-full ml-auto overflow-hidden 2xl:max-w-3/4 lg:max-w-3/5 ">
                 <nuxt-picture
-                    fit="cover"
                     src="/images/dan-landscape.jpg"
                     class="w-full h-full"
                     format="webp"
@@ -98,7 +97,6 @@
             </div>
             <div class="relative w-full ml-auto overflow-hidden 2xl:max-w-3/4 lg:max-w-3/5 ">
                 <nuxt-picture
-                    fit="cover"
                     format="webp"
                     src="/images/download.jpg"
                     class="w-full h-full"
