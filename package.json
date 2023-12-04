@@ -32,7 +32,6 @@
     "dependencies": {
         "@nuxt/image": "^1.1.0",
         "esbuild": "^0.19.8",
-        "ipx": "^2.0.2",
         "vue-datocms": "^4.0.6"
     }
 }
