@@ -2,12 +2,12 @@
 .page-leave-active {
     backface-visibility: hidden;
 
-    @apply transition-all duration-700 ease-in-out;
+    @apply transition-all delay-500 duration-700 ease-in-out;
 }
 
 .page-enter-from,
 .page-leave-to {
     backface-visibility: hidden;
-    @apply opacity-0 translate-x-full;
+    @apply opacity-0 delay-500 translate-x-full;
 }
 

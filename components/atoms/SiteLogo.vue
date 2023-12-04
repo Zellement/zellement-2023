@@ -20,7 +20,7 @@
             <span class="text-[4.8vw] leading-none lg:text-lg 2xl:text-xl">
                 Front-end Developer
             </span>
-            <span class="font-serif text-[2.7vw] italic opacity-50 xl:ml-auto xl:mt-3">for
+            <span class="font-serif text-[2.7vw] italic lg:text-xs opacity-50 xl:ml-auto xl:mt-3">for
                 <nuxt-link
                     class="hover:underline"
                     target="_blank"
