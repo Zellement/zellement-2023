@@ -26,7 +26,7 @@
                 </div>
             </div>
 
-            <div class="relative grid w-full ml-auto lg:w-3/5 aspect-square md:aspect-video 2xl:max-w-3/4 lg:max-w-3/4 ">
+            <div class="relative grid w-full ml-auto lg:w-3/5 aspect-landscape md:aspect-video 2xl:max-w-3/4 lg:max-w-3/4 ">
                 <div
                     class="inset-0 flex col-start-1 row-start-1 transition-opacity duration-500 col-span-full bg-gradient-to-l dark:from-shiraz-700 from-gray-100 to-gray-200 dark:to-shiraz-600"
                 >
