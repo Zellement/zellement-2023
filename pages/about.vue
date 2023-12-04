@@ -24,6 +24,7 @@
                 <nuxt-picture
                     src="/images/dan-landscape.jpg"
                     class="w-full h-full"
+                    loading="lazy"
                     format="avif,webp"
                     fit="crop"
                     sizes="100vw sm:50vw md:400px"
@@ -104,6 +105,7 @@
                     class="w-full h-full"
                     fit="crop"
                     sizes="100vw sm:50vw md:400px"
+                    loading="lazy"
                     :img-attrs="{class:'object-cover w-full h-full'}"
                 />
             </div>
