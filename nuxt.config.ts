@@ -6,7 +6,8 @@ import { ofetch } from 'ofetch'
 export default defineNuxtConfig({
     runtimeConfig: {
         public: {
-            datoCmsToken: process.env.DATO_CMS_TOKEN
+            datoCmsToken: process.env.DATO_CMS_TOKEN,
+            gTagId: process.env.GTAG_ID
         }
     },
     target: 'static',
