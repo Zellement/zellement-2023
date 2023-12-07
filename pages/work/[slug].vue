@@ -270,4 +270,12 @@ if (!data?.value?.work?.slug) {
     navigateTo('/')
 }
 
+const seoTitle = computed(() => {
+    return `${workData.value?.title} | Dan Farrow | Front-end Developer`
+})
+
+useSeoMeta({
+    title: seoTitle.value
+})
+
 </script>

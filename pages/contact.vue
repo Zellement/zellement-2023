@@ -1,7 +1,7 @@
 <template>
     <div>
         <atoms-go-back-button class="bg-gray-100 dark:bg-slate-800" />
-        <div class="relative z-10 w-full ml-auto text-black bg-white dark:bg-slate-900 dark:text-slate-100 slug-content">
+        <div class="relative z-10 w-full min-h-screen ml-auto text-black bg-white dark:bg-slate-900 dark:text-slate-100 slug-content">
             <div class="w-2/3 p-4 ml-auto bg-gray-100 dark:bg-slate-800 lg:w-1/2 xl:px-16">
                 <div class="relative flex flex-col items-start self-start justify-start gap-8 pb-8 content">
                     <h1 class="block mt-16 font-serif h1">
@@ -104,5 +104,13 @@
 // // const heroIsLoaded = () => {
 // //     return data.value.work.heroImage.url.isLoaded
 // // }
+
+const seoTitle = computed(() => {
+    return 'Contact me | Dan Farrow | Front-end Developer'
+})
+
+useSeoMeta({
+    title: seoTitle.value
+})
 
 </script>

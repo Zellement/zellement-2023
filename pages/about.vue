@@ -160,4 +160,12 @@
 // //     return data.value.work.heroImage.url.isLoaded
 // // }
 
+const seoTitle = computed(() => {
+    return 'About me | Dan Farrow | Front-end Developer'
+})
+
+useSeoMeta({
+    title: seoTitle.value
+})
+
 </script>
