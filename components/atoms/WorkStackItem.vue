@@ -4,9 +4,9 @@
     >
         <nuxt-link
             :to="`/work/${props.data.slug}`"
-            class="relative grid items-center gap-4 p-4 text-gray-600 transition-all duration-300 bg-white shadow-lg dark:bg-slate-900 lg:p-8 lg:gap-12 lg:grid-cols-2 rounded-xl hover:bg-slate-900 dark:hover:bg-slate-800 hover:text-white group"
+            class="relative grid items-center gap-4 p-4 text-gray-600 transition-all duration-300 bg-white shadow-lg dark:bg-slate-900 lg:p-8 lg:gap-4 lg:grid-cols-12 rounded-xl hover:bg-slate-900 dark:hover:bg-slate-800 hover:text-white group"
         >
-            <div>
+            <div class="lg:col-span-4 3xl:col-span-3 xl:flex xl:items-center xl:gap-2">
                 <span class="sr-only">{{ props.data.title }}</span>
                 <img
                     :alt="`Logo for ${props.data.title}`"
@@ -19,7 +19,7 @@
                     class="leading-none tracking-tighter uppercase text-2xs text-slate-900 dark:text-slate-100"
                 >Dashboard</span>
             </div>
-            <div class="flex flex-col 3xl:flex-row 3xl:items-center 3xl:justify-between 3xl:gap-8">
+            <div class="flex flex-col 3xl:flex-row 3xl:items-center 3xl:justify-between 3xl:gap-8 lg:col-span-8 lg:col-start-5 3xl:col-span-9 3xl:col-start-4">
                 <span class="font-serif text-xs leading-tight dark:text-gray-400 lg:text-sm ">{{ props.data.teaserLine }}</span>
                 <span class="dark:text-gray-300 text-2xs lg:text-xs group-hover:white-gray-100">{{ props.data.teaserStack }} </span>
             </div>
