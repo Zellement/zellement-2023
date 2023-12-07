@@ -106,9 +106,9 @@ hr {
   p strong {
     @apply font-bold text-sm;
   }
-//   > * + * {
-//     @apply mt-;
-//   }
+  > * + * {
+    @apply mt-4;
+  }
   ul {
     @apply flex flex-col space-y-2 list-none;
 
@@ -121,7 +121,7 @@ hr {
     }
   }
   p a {
-    @apply relative;
+    @apply relative font-serif;
     @screen lg {
       &:after {
         content: "";
