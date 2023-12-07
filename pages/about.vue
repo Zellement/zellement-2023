@@ -1,9 +1,9 @@
 <template>
     <div>
-        <atoms-go-back-button class="" />
+        <atoms-go-back-button class="bg-white dark:bg-slate-900" />
         <div class="relative z-10 w-full ml-auto text-black bg-gray-100 dark:bg-slate-800 dark:text-slate-100 slug-content">
             <div class="w-2/3 p-4 ml-auto bg-white dark:bg-slate-900 lg:w-1/2 xl:px-16">
-                <div class="relative flex flex-col items-start self-start justify-start gap-8 content">
+                <div class="relative flex flex-col items-start self-start justify-start gap-8 pb-8 content">
                     <h1 class="block mt-16 font-serif h1">
                         About
                     </h1>
@@ -20,7 +20,7 @@
                 </div>
             </div>
 
-            <div class="relative w-full ml-auto overflow-hidden 2xl:max-w-3/4 lg:max-w-3/5 ">
+            <div class="relative w-full ml-auto overflow-hidden xl:max-w-2/3 2xl:max-w-3/5">
                 <nuxt-picture
                     src="/images/dan-landscape.jpg"
                     class="w-full h-full"
@@ -32,7 +32,7 @@
                 />
             </div>
             <div class="w-2/3 p-4 p-6 ml-auto bg-white lg:pt-12 dark:bg-slate-900 lg:w-1/2 xl:px-16">
-                <div class="flex flex-col items-start self-start justify-start gap-8 content">
+                <div class="flex flex-col items-start self-start justify-start gap-8 pb-8 content">
                     <h2 class="font-serif text-sm">
                         Designer
                     </h2>
@@ -98,7 +98,7 @@
                     <p>I'm hugely into a select few genres of music, but mostly a massive metalhead. From old school metal bands like <em>Slayer</em> and <em>Metallica</em>, all the way through to heavier bands such as <em>Lamb of God</em>, <em>Behemoth</em> and <em>Sylosis</em>.</p>
                 </div>
             </div>
-            <div class="relative w-full ml-auto overflow-hidden 2xl:max-w-3/4 lg:max-w-3/5 ">
+            <div class="relative w-full ml-auto overflow-hidden xl:max-w-2/3 2xl:max-w-3/5">
                 <nuxt-picture
                     format="avif,webp"
                     src="/images/download.jpg"
@@ -111,7 +111,7 @@
             </div>
 
             <div class="w-2/3 p-4 ml-auto bg-white dark:bg-slate-900 lg:w-1/2 xl:px-16">
-                <div class="flex flex-col items-start self-start justify-start gap-8 content">
+                <div class="flex flex-col items-start self-start justify-start gap-8 py-8 content">
                     <p>In addition to metal, I've found myself listening to a lot of "modern classical", much of which consists of film and TV music. I can't get enough of my self-proclaimed classical playlist on Spotify, a lot of which comes in the form on <em>Hans Zimmer</em>.</p>
 
                     <h3>Other hobbies</h3>

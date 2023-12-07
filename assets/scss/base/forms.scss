@@ -1,0 +1,11 @@
+.form {
+    label {
+        @apply font-serif grid grid-cols-1 gap-1 xl:grid-cols-2;
+        span {
+            @apply xl:text-right mt-1 xl:pr-8;
+        }
+    }
+    input, textarea {
+        @apply px-3 py-1 border border-gray-500 rounded dark:bg-slate-700 dark:text-slate-100 font-sans;
+    }
+}

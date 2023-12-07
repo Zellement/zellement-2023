@@ -1,6 +1,6 @@
 <template>
     <div>
-        <atoms-go-back-button />
+        <atoms-go-back-button class="bg-white dark:bg-slate-900" />
         <div
             v-show="data"
             :key="workData?.id"
@@ -23,6 +23,12 @@
                     <h1 class="sr-only">
                         {{ workData?.title }}
                     </h1>
+                    <span
+                        v-if="workData?.title === 'Been Coffee Dashboard'"
+                        class="ml-auto -mt-8 font-serif h5"
+                    >
+                        Dashboard
+                    </span>
                 </div>
             </div>
 
@@ -67,7 +73,7 @@
                         </li>
                     </ul>
                 </ul>
-                <div class="flex flex-row items-end justify-end gap-8 pb-4 mt-8 3xl:m-0 3xl:flex-shrink-0">
+                <div class="flex flex-row items-end justify-end gap-8 mt-8 3xl:m-0 3xl:flex-shrink-0 ">
                     <div class="font-serif leading-none text-right">
                         <template v-if="isFreelance">
                             {{ data?.work.employer.title }} <span class="text-gray-400"><em class="block">in {{ getYear }}</em></span>
@@ -90,7 +96,7 @@
                 class="pt-24 bg-white bg-gradient-to-t dark:from-slate-900 dark:to-slate-800 from-white to-gray-200 lg:w-1/2 lg:ml-auto"
             >
                 <div
-                    class="-translate-y-16 relative grid w-10/12 monitor p-1.5 pb-2 lg:pb-4 ml-auto mr-1/12 rounded  md:mr-4  lg:p-2 bg-gradient-to-br from-slate-700 to-slate-900 lg:mt-4 lg:w-10/12 lg:mx-auto"
+                    class="-translate-y-16 relative grid w-10/12 monitor p-1.5 pb-2 lg:pb-4 3xl:pb-8 ml-auto mr-1/12 rounded shadow-xl md:mr-4  lg:p-2 bg-gradient-to-br from-slate-700 to-slate-900 lg:mt-4 lg:w-10/12 lg:mx-auto"
                 >
                     <div
                         class="inset-0 flex col-start-1 row-start-1 transition-opacity duration-500 col-span-full bg-gradient-to-l dark:from-shiraz-700 from-gray-100 to-gray-200 dark:to-shiraz-600"

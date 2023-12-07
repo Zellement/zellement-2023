@@ -1,6 +1,6 @@
 <template>
     <nuxt-link
-        class="fixed top-0 z-50 px-2.5 py-1.5 mt-4 transition-colors duration-300 -translate-x-full  bg-white dark:bg-slate-900 hover:text-white hover:bg-shiraz-500 left-1/3 lg:left-1/2 flex"
+        class="fixed top-0 z-50 px-2.5 py-1.5 mt-4 hover:transition-colors -translate-x-full   hover:text-white hover:bg-shiraz-500 left-1/3 lg:left-1/2 flex"
         to="/"
         title="Go back"
     >

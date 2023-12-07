@@ -28,28 +28,7 @@
             </nuxt-link>
         </li>
         <li class="flex flex-row items-center gap-2 mt-8 lg:gap-4">
-            <nuxt-link
-                class="flex  hover:-translate-y-0.5 transition-transform"
-                to="https://www.linkedin.com/in/zellement/"
-                target="_blank"
-                aria-label="Visit my LinkedIn"
-            >
-                <Icon
-                    name="ri:linkedin-line"
-                    class="w-4 h-4 m-auto lg:w-6 lg:h-6"
-                />
-            </nuxt-link>
-            <nuxt-link
-                class="flex  hover:-translate-y-0.5 transition-transform"
-                to="https://github.com/Zellement/"
-                target="_blank"
-                aria-label="Visit my GitHub profile"
-            >
-                <Icon
-                    name="ph:github-logo-light"
-                    class="w-4 h-4 m-auto lg:w-6 lg:h-6"
-                />
-            </nuxt-link>
+            <molecules-social-icons />
             <button
                 :class="darkModeIconClasses"
                 class="flex  hover:-translate-y-0.5 transition-transform"
