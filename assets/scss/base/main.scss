@@ -3,7 +3,7 @@ html {
 }
 
 html.dark body {
-    @apply bg-gradient-to-r from-shiraz-700 via-shiraz-600 to-shiraz-700 text-slate-50 font-sans ;
+    @apply bg-gradient-to-r from-shiraz-700 via-shiraz-600 to-shiraz-700 text-slate-200 font-sans ;
 }
 
 html.light body {

@@ -4,7 +4,7 @@
         <div
             v-show="data"
             :key="workData?.id"
-            class="relative z-10 w-full pb-16 ml-auto text-black lg:pb-24 lg:pb-12 dark:text-slate-300 slug-content"
+            class="relative z-10 w-full pb-16 ml-auto lg:pb-12 slug-content"
         >
             <div class="w-2/3 p-4 ml-auto bg-white lg:w-1/2 dark:bg-slate-900 xl:px-16">
                 <h1 class="w-2/5 text-gray-500/10 pointer-events-none font-serif absolute text-[9vw] dark:text-slate-50/10 lg:text-[7vw] xl:text-[6vw] 2xl:text-[5vw] leading-none top-0 mt-2.5 right-0 text-right">

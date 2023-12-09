@@ -1,7 +1,7 @@
 <template>
     <div>
         <atoms-go-back-button class="bg-white dark:bg-slate-900" />
-        <div class="relative z-10 w-full ml-auto text-black bg-gray-100 dark:bg-slate-800 dark:text-slate-100 slug-content">
+        <div class="relative z-10 w-full ml-auto bg-gray-100 dark:bg-slate-800 slug-content">
             <div class="w-2/3 p-4 ml-auto bg-white dark:bg-slate-900 lg:w-1/2 xl:px-16">
                 <div class="relative flex flex-col items-start self-start justify-start gap-2 pb-8 content">
                     <h1 class="block mt-16 font-serif h1">
