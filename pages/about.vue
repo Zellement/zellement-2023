@@ -13,10 +13,10 @@
                     </h2>
 
                     <p class="w-full p-4 -mx-8 text-xs text-white bg-shiraz-500 ">
-                        I have over 18 years of experience working in leading development &amp; marketing agencies across the UK, and I've been lucky to have the chance to work on a multitude of languages, platforms and frameworks.
+                        I have over 20 years of experience working in leading development &amp; marketing agencies across the UK, and I've been lucky to have the chance to work on a multitude of languages, platforms and frameworks.
                     </p>
 
-                    <p>With a strong historical background in <em>WordPress</em>, in recent years I have worked predominantly with Headless CMS platforms such as <em>Contentful</em>, <em>DatoCMS</em> &amp; <em>Prismic</em>, delivered with front-ends such as <em>GatsbyJS</em>, <em>NextJS</em> and <em>NuxtJS</em>.</p>
+                    <p>With a strong historical background in <em>WordPress</em>, in recent years I have worked predominantly with Headless CMS platforms such as <em>Contentful</em> (of which I am an accredited developer), <em>Storyblok</em> &amp; <em>DatoCMS</em>, delivered with front-ends such as <em>NuxtJS</em>, <em>GatsbyJS</em> and <em>NextJS</em>.</p>
                 </div>
             </div>
 
